@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2016/11/22 17:59:19 by pdamoune         ###   ########.fr       */
+/*   Updated: 2016/11/24 09:06:07 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ char		*ft_strrev(char *str);
 char		*ft_strnew(size_t size);
 char		*ft_strmap(const char *str, char (*f)(char));
 char		*ft_strmapi(const char *str, char (*f)(unsigned int, char));
-char		*ft_strmapi(const char *str, char (*f)(unsigned int, char));
 char		*ft_strsub(const char *str, unsigned int start, size_t len);
 char		*ft_strjoin(const char *str1, const char *str2);
 char		*ft_strtrim(const char *str);
@@ -122,6 +121,7 @@ void		ft_putnbr_fd(int n, int fd);
 
 t_list		*ft_lstnew(void const *content, size_t content_size);
 void		ft_lstadd(t_list **alst, t_list *new);
+void		ft_lstprev(t_list *first, t_list *last);
 void		ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void		ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void		ft_lstiter(t_list *lst, void (*f)(t_list *elem));

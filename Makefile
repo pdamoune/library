@@ -6,7 +6,7 @@
 #    By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 18:34:34 by pdamoune          #+#    #+#              #
-#    Updated: 2016/11/22 17:10:24 by pdamoune         ###   ########.fr        #
+#    Updated: 2016/11/24 04:36:35 by pdamoune         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ ft_strequ.c ft_striter.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlen.c \
 ft_strmap.c ft_strmapi.c ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c \
 ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strrev.c ft_strsplit.c ft_strstr.c \
 ft_strsub.c ft_strtrim.c ft_swap.c ft_tolower.c ft_toupper.c ft_count_occur.c \
-ft_conv_bin.c
+ft_conv_bin.c lstprev.c
 HEADERS	=	libft.h
 CFLAGS	=	-Wall -Wextra -Werror
 CC		=	clang
