@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2016/11/24 09:06:07 by pdamoune         ###   ########.fr       */
+/*   Updated: 2016/12/24 19:50:18 by philippedamoune  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,11 @@ char		**ft_strsplit(const char *str, char c);
 int			ft_count_c_words(const char *str, char c);
 int			ft_count_occur(char *str, int c);
 int			ft_sqrt(int nb);
+int			ft_sqrt_min(int nb);
 int			ft_strequ(const char *str1, const char *str2);
 int			ft_strnequ(const char *str1, const char *str2, size_t n);
+int			ft_strdift(const char *str1, const char *str2);
+
 
 /*
 ** 				Outils zone memoire

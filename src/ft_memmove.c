@@ -6,11 +6,11 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 15:40:40 by pdamoune          #+#    #+#             */
-/*   Updated: 2016/11/22 05:27:38 by pdamoune         ###   ########.fr       */
+/*   Updated: 2016/12/24 20:25:29 by philippedamoune  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 /*
 ** Copies n bytes from memory area src to memory area
@@ -36,5 +36,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return (dest);
 	}
 	free(tmp);
+	tmp = NULL;
 	return ((void *)src);
 }
