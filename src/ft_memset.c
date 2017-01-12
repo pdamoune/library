@@ -6,11 +6,11 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 12:04:44 by pdamoune          #+#    #+#             */
-/*   Updated: 2016/11/20 01:39:32 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/01/11 23:45:16 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 /*
 ** copies the character c (an unsigned char) to the first n characters of the

@@ -6,11 +6,11 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 20:25:36 by pdamoune          #+#    #+#             */
-/*   Updated: 2016/11/14 16:27:01 by philippedamoune  ###   ########.fr       */
+/*   Updated: 2017/01/11 23:58:27 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 /*
 ** Alloue (avec malloc(3)) et retourne une zone de mémoire
