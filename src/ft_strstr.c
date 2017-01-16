@@ -6,11 +6,11 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 17:52:22 by pdamoune          #+#    #+#             */
-/*   Updated: 2016/11/22 15:24:43 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/01/12 04:45:40 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 /*
 ** finds the first occurrence of the substring needle in the string haystack.
