@@ -6,11 +6,11 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 20:26:03 by pdamoune          #+#    #+#             */
-/*   Updated: 2016/11/20 04:01:14 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/01/17 16:24:41 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 /*
 ** Alloue (avec malloc(3)) et retourne une chaine de caractère
@@ -23,10 +23,10 @@ char	*ft_strnew(size_t size)
 {
 	char	*str;
 
-	if ((str = (char *)malloc((sizeof(char) * size) + 1)))
+	if ((str = (char *)malloc(sizeof(char *) * size + 1)))
 	{
-		ft_bzero(str, size + 1);
+		ft_bzero(str, size);
 		return (str);
 	}
-	return (str);
+	return (NULL);
 }
