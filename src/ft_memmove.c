@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 15:40:40 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/01/17 15:47:57 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/01/18 01:50:11 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,5 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		tmp = NULL;
 		return (dest);
 	}
-	free(tmp);
-	tmp = NULL;
 	return ((void *)src);
 }
