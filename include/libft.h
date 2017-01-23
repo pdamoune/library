@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/01/12 04:44:16 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/01/23 21:50:46 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ void		*ft_memalloc(size_t size);
 void		ft_putchar(char c);
 void		ft_putstr(const char *str);
 void		ft_putendl(const char *str);
+void		ft_putnbrel(int nb);
 void		ft_putnbr(int n);
 
 /*
