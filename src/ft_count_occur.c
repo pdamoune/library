@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 06:18:55 by pdamoune          #+#    #+#             */
-/*   Updated: 2016/11/22 06:34:07 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/01/30 12:21:45 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ int		ft_count_occur(char *str, int c)
 	while (str[i])
 		if (str[i++] == c)
 			count++;
-	return(count);
+	return (count);
 }

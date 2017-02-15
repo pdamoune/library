@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprev.c                                       :+:      :+:    :+:   */
+/*   ft_memrealloc.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/21 12:39:22 by pdamoune          #+#    #+#             */
-/*   Updated: 2016/11/21 12:39:27 by pdamoune         ###   ########.fr       */
+/*   Created: 2017/02/06 19:03:14 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/02/15 14:24:33 by philippedamoune  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 /*
-** Ajoute l’élément new en a la suite de alst.
+** Copy the ptr's content to the string *tmp. free the old pointer realloc the
+** new len size to ptr. copy the old content into the new ptr.
 */
 
-void	ft_lstprev(t_list **alst, t_list *new)
+void	ft_memrealloc(void **ptr, int len)
 {
-	if (!(alst && new))
-		return ;
-	alst->next = *new
-	*new = alst;
+	void	*tmp;
+
+	tmp = ft_memalloc(len);
+	ft_memccpy(tmp, *ptr, 0, len);
+	ft_memdel(ptr);
+	if (!(*ptr = ft_memalloc(len)))
+		*ptr = NULL;
+	else
+		ft_memcpy(*ptr, tmp, len);
+	ft_memdel(&tmp);
 }

@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstprev.c                                          :+:      :+:    :+:   */
+/*   ft_lst_find.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
+/*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 04:17:58 by pdamoune          #+#    #+#             */
-/*   Updated: 2016/11/24 07:56:41 by pdamoune         ###   ########.fr       */
+/*   Created: 2017/02/11 16:14:26 by philippe          #+#    #+#             */
+/*   Updated: 2017/02/15 14:04:30 by philippedamoune  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
-/*
-** Ajoute l’élément new a la fin de la liste.
-*/
-
-void	ft_lstprev(t_list *first, t_list *new)
+t_list	*ft_lstfind(t_list *list, void *data, int (*cmp)())
 {
-	t_list	*tmp;
-
-	tmp = first;
-	if(!first)
-	{
-		first = new;
-		return ;
-	}
-	while (tmp->next)
-		tmp = tmp->next;
-	tmp->next = new;
+	while (list && cmp(list->content, data))
+		list = list->next;
+	return (list);
 }

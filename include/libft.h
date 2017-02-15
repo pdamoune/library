@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/01/23 21:50:46 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/02/11 16:16:02 by philippedamoune  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,13 +86,13 @@ int			ft_strequ(const char *str1, const char *str2);
 int			ft_strnequ(const char *str1, const char *str2, size_t n);
 int			ft_strdift(const char *str1, const char *str2);
 
-
 /*
 ** 				Outils zone memoire
 */
 
 void		ft_bzero(void *s, size_t n);
 void		ft_memdel(void **ap);
+void		ft_memrealloc(void **ptr, int len);
 int			ft_memcmp(const void *str1, const void *str2, size_t n);
 void		*ft_memchr(const void *str, int c, size_t n);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
@@ -126,9 +126,9 @@ void		ft_putnbr_fd(int n, int fd);
 
 t_list		*ft_lstnew(void const *content, size_t content_size);
 void		ft_lstadd(t_list **alst, t_list *new);
-void		ft_lstprev(t_list *first, t_list *last);
 void		ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void		ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+t_list		*ft_lstfind(t_list *list, void *data, int (*cmp)());
 void		ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
