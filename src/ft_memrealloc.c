@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/06 19:03:14 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/02/15 14:24:33 by philippedamoune  ###   ########.fr       */
+/*   Updated: 2017/02/20 07:06:28 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,13 @@
 ** new len size to ptr. copy the old content into the new ptr.
 */
 
-void	ft_memrealloc(void **ptr, int len)
+void	*ft_memrealloc(void *ptr, size_t old_size, size_t new_size)
 {
 	void	*tmp;
 
-	tmp = ft_memalloc(len);
-	ft_memccpy(tmp, *ptr, 0, len);
-	ft_memdel(ptr);
-	if (!(*ptr = ft_memalloc(len)))
-		*ptr = NULL;
-	else
-		ft_memcpy(*ptr, tmp, len);
-	ft_memdel(&tmp);
+	if (!(tmp = ft_memalloc(new_size + 1)))
+		return (NULL);
+	ft_memcpy(tmp, ptr, old_size + 1);
+	ft_memdel(&ptr);
+	return ((void *)tmp);
 }
