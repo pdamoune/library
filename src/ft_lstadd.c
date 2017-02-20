@@ -6,7 +6,7 @@
 /*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 18:24:55 by philippe          #+#    #+#             */
-/*   Updated: 2017/02/20 07:10:03 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/02/20 07:25:27 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 ** Ajoute l’élément new en tête de la liste.
 */
 
-void	ft_lstadd(t_list **alst, t_list *new)
+void	ft_lstadd(t_list **alst, t_list *new_list)
 {
-	if (!(alst && new))
+	if (!(alst && new_list))
 		return ;
-	new->next = *alst;
-	*alst = new;
+	new_list->next = *alst;
+	*alst = new_list;
 }
