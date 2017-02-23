@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/12 16:57:04 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/02/20 07:05:02 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/02/23 14:36:27 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,10 @@ int		ft_count_c_words(const char *str, char c)
 
 	i = 0;
 	words = 0;
-	while (str[i])
-	{
-		while (str[i] != c && str[i])
-			i++;
+	if (str[i] != c)
 		words++;
-		while (str[i] == c && str[i])
-			i++;
-	}
+	while (str[i])
+		if (str[i++] == c)
+			words++;
 	return (words);
 }
