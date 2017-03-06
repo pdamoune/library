@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 18:50:02 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/02/20 07:09:55 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/03/06 12:05:38 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,5 @@
 
 int		ft_isxdigit(int c)
 {
-	if (ft_isdigit(c) || (c >= 65 && c <= 70) || (c >= 97 && c <= 102))
-		return (1);
-	return (0);
+	return (ft_isdigit(c) || (c >= 65 && c <= 70) || (c >= 97 && c <= 102));
 }
