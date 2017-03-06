@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_strcsplit.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 22:31:59 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/03/01 16:37:55 by philippedamoune  ###   ########.fr       */
+/*   Updated: 2017/03/01 17:03:58 by philippedamoune  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,29 +21,33 @@
 ** le tableau ["salut", "les", "etudiants"].
 */
 
-char		**ft_strsplit(const char *str, char c)
+char		**ft_strcsplit(const char *str, char c)
 {
 	char	**tab;
 	char	*tmp;
 	int		i;
+	int		j;
 	int		words;
 
-	tmp = ft_strctrim(str, c);
-	if (tmp == NULL)
+	if (!(tmp = ft_strdup(str)))
 		return (NULL);
-	words = ft_count_c_words(tmp, c) - 1;
+	words = ft_count_c_words(tmp, c);
 	tab = (char **)ft_memalloc(sizeof(char *) * (words + 1));
-	i = ft_strlen(tmp);
+	ft_putnbrel(words);
+	i = 0;
+	j = 0;
 	tab[words + 1] = NULL;
-	while (i != 0 && words >= 0)
+	while (tmp[i])
 	{
-		while (i != -1 && tmp[i] != c)
-			i--;
-		tab[words] = ft_strdup(&(((char *)tmp)[i + 1]));
-		while (i != -1 && tmp[i] == c)
-			i--;
-		tmp[i + 1] = '\0';
-		words--;
+		while (tmp[i] && tmp[i] != c)
+			i++;
+		tmp[i] = 0;
+		tab[j] = ft_strdup(tmp);
+		free(tmp);
+		if (str[i])
+			tmp = ft_strdup(&str[i + 1]);
+		ft_putstr("=="), ft_putendl(tmp);
+		j++;
 	}
 	free(tmp);
 	return (tab);

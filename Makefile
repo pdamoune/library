@@ -6,7 +6,7 @@
 #    By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 18:34:34 by pdamoune          #+#    #+#              #
-#    Updated: 2017/02/23 11:12:29 by philippedamoune  ###   ########.fr        #
+#    Updated: 2017/03/01 16:50:46 by philippedamoune  ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ ft_strmap.c ft_strmapi.c ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c \
 ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strrev.c ft_strsplit.c ft_strstr.c \
 ft_strsub.c ft_strtrim.c ft_swap.c ft_tolower.c ft_toupper.c ft_count_occur.c \
 ft_conv_bin.c ft_strdift.c ft_sqrt_min.c ft_strcstr.c ft_putnbrel.c \
-ft_memrealloc.c ft_lst_find.c get_next_line.c
+ft_memrealloc.c ft_lst_find.c get_next_line.c ft_displaytab.c ft_tabdel.c \
+ft_strcsplit.c
 HEADERS	=	libft.h get_next_line.h
 CFLAGS	=	-Wall -Wextra -Werror
 CC		=	clang

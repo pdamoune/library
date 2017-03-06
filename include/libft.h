@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/02/20 07:25:55 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/03/01 16:49:40 by philippedamoune  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ char		*ft_strjoin(const char *str1, const char *str2);
 char		*ft_strtrim(const char *str);
 char		*ft_strctrim(const char *str, int c);
 char		**ft_strsplit(const char *str, char c);
+char		**ft_strcsplit(const char *str, char c);
 int			ft_count_c_words(const char *str, char c);
 int			ft_count_occur(char *str, int c);
 int			ft_sqrt(int nb);
@@ -92,6 +93,7 @@ int			ft_strdift(const char *str1, const char *str2);
 
 void		ft_bzero(void *s, size_t n);
 void		ft_memdel(void **ap);
+void		ft_tabdel(char **tab);
 int			ft_memcmp(const void *str1, const void *str2, size_t n);
 void		*ft_memrealloc(void *ptr, size_t old_size, size_t new_size);
 void		*ft_memchr(const void *str, int c, size_t n);
@@ -110,6 +112,8 @@ void		ft_putstr(const char *str);
 void		ft_putendl(const char *str);
 void		ft_putnbrel(int nb);
 void		ft_putnbr(int n);
+void		ft_displaytab(char **tab);
+
 
 /*
 **				Fonctions file descriptor
