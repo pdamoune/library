@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/03/01 16:49:40 by philippedamoune  ###   ########.fr       */
+/*   Updated: 2017/03/14 07:17:29 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ void		ft_putchar(char c);
 void		ft_putstr(const char *str);
 void		ft_putendl(const char *str);
 void		ft_putnbrel(int nb);
+void		ft_putnbr_bin(int n);
 void		ft_putnbr(int n);
 void		ft_displaytab(char **tab);
 
