@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/03/17 02:32:37 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/03/17 05:41:34 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# define U unsigned
+# define L long
+
 
 typedef struct s_list	t_list;
 
@@ -76,7 +79,7 @@ char		*ft_strnew(size_t size);
 char		*ft_strmap(const char *str, char (*f)(char));
 char		*ft_strmapi(const char *str, char (*f)(unsigned int, char));
 char		*ft_strsub(const char *str, unsigned int start, size_t len);
-char		*ft_strjoin(const char *str1, const char *str2);
+char		*ft_strjoin(char *str1, const char *str2);
 char		*ft_strtrim(const char *str);
 char		*ft_strctrim(const char *str, int c);
 char		**ft_strsplit(const char *str, char c);
@@ -116,6 +119,7 @@ void		ft_putnbrel(int nb);
 void		ft_putnbr_bin(int n);
 void		ft_putnbr(int n);
 void		ft_displaytab(char **tab);
+void		ft_putaddr(void *ptr);
 
 
 /*
