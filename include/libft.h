@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/03/17 00:29:40 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/03/17 02:32:37 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ void		ft_strdel(char **str);
 char		*ft_conv_bin(char *str, int b_one, int b_zero);
 int			ft_atoi(const char *str);
 char		*ft_itoa(int n);
-char		*ft_signed_itoa_base(long long n, int base);
-char		*ft_unsigned_itoa_base(unsigned long long n, int base);
+char		*ft_lltoa_base(long long n, unsigned int base);
+char		*ft_ulltoa_base(unsigned long long n, unsigned int base);
 void		ft_swap(int *a, int *b);
 void		ft_sort_params(int argc, char **argv);
 char		*ft_strrev(char *str);
