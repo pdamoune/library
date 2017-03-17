@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lltoa_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 09:37:55 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/03/13 08:43:49 by pdamoune         ###   ########.fr       */
+/*   Created: 2017/03/16 23:30:35 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/03/17 02:32:47 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-/*
-** Converts the initial portion of the string pointed to by str to int.
-*/
-
-int		ft_atoi(const char *str)
+char	*ft_lltoa_base(long long n, unsigned int base)
 {
-	int		n;
-	int		s;
-	int		strnb;
+	static char		result[20];
+	static	int		len = 0;
 
-	n = 0;
-	strnb = 0;
-	while (ft_isspace(str[n]) == 1)
-		n++;
-	if (str[n] == '-')
-		s = 1;
-	if (str[n] == '+' || str[n] == '-')
-		n++;
-	while (ft_isdigit(str[n]) == 1)
-		strnb = (strnb * 10) + (str[n++] - '0');
-	if (s == 1)
-		return (-strnb);
-	return (strnb);
+	if (n <= -base || n >= base)
+	{
+		ft_lltoa_base(n / base, base);
+		len++;
+	}
+	if (n > 0)
+		result[len] = (n % base) + '0';
+	else
+	{
+		result[0] = '-';
+		result[len + 1] = -(n % base) + '0';
+	}
+	if (base == 16)
+		if (!ft_isdigit((n % base) + '0'))
+			result[len] += 39;
+	return (result);
 }

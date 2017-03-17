@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/03/01 16:49:40 by philippedamoune  ###   ########.fr       */
+/*   Updated: 2017/03/17 02:32:37 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ void		ft_strdel(char **str);
 char		*ft_conv_bin(char *str, int b_one, int b_zero);
 int			ft_atoi(const char *str);
 char		*ft_itoa(int n);
+char		*ft_lltoa_base(long long n, unsigned int base);
+char		*ft_ulltoa_base(unsigned long long n, unsigned int base);
 void		ft_swap(int *a, int *b);
 void		ft_sort_params(int argc, char **argv);
 char		*ft_strrev(char *str);
@@ -111,6 +113,7 @@ void		ft_putchar(char c);
 void		ft_putstr(const char *str);
 void		ft_putendl(const char *str);
 void		ft_putnbrel(int nb);
+void		ft_putnbr_bin(int n);
 void		ft_putnbr(int n);
 void		ft_displaytab(char **tab);
 

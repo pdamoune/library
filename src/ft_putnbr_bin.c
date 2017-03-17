@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_bin.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 09:37:55 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/03/13 08:43:49 by pdamoune         ###   ########.fr       */
+/*   Created: 2017/03/14 07:14:41 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/03/14 07:42:00 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
 /*
-** Converts the initial portion of the string pointed to by str to int.
+** Affiche le nombre n en binaire.
 */
 
-int		ft_atoi(const char *str)
+void	ft_putnbr_bin(int n)
 {
-	int		n;
-	int		s;
-	int		strnb;
+	int i;
 
-	n = 0;
-	strnb = 0;
-	while (ft_isspace(str[n]) == 1)
-		n++;
-	if (str[n] == '-')
-		s = 1;
-	if (str[n] == '+' || str[n] == '-')
-		n++;
-	while (ft_isdigit(str[n]) == 1)
-		strnb = (strnb * 10) + (str[n++] - '0');
-	if (s == 1)
-		return (-strnb);
-	return (strnb);
+	i = 32;
+	while (--i >= 0)
+		(1 << i) & n ? ft_putchar ('1') : ft_putchar('0');
 }
