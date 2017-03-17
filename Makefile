@@ -6,11 +6,8 @@
 #    By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 18:34:34 by pdamoune          #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2017/03/17 00:44:26 by pdamoune         ###   ########.fr        #
-=======
+#    Updated: 2017/03/17 02:46:48 by pdamoune         ###   ########.fr        #
 #    Updated: 2017/03/17 00:45:06 by pdamoune         ###   ########.fr        #
->>>>>>> refs/remotes/origin/master
 #                                                                              #
 # **************************************************************************** #
 
