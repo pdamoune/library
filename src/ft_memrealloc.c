@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/06 19:03:14 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/02/20 07:06:28 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/03/20 18:37:27 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void	*ft_memrealloc(void *ptr, size_t old_size, size_t new_size)
 
 	if (!(tmp = ft_memalloc(new_size + 1)))
 		return (NULL);
-	ft_memcpy(tmp, ptr, old_size + 1);
+	if (old_size)
+		ft_memcpy(tmp, ptr, old_size + 1);
 	ft_memdel(&ptr);
 	return ((void *)tmp);
 }
