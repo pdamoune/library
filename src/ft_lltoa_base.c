@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/16 23:30:35 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/03/17 02:32:47 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/03/20 17:28:17 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,25 @@
 
 char	*ft_lltoa_base(long long n, unsigned int base)
 {
-	static char		result[20];
-	static	int		len = 0;
+	char		result[64];
+	int			len;
+	int			mod;
 
-	if (n <= -base || n >= base)
+	len = 0;
+	ft_bzero(result, 21);
+	result[len] = '0';
+	while (n > 0 || n < 0)
 	{
-		ft_lltoa_base(n / base, base);
+		mod = ABS(n % base);
+		result[len] = mod + '0';
+		if (base >= 10)
+			if (!ft_isdigit(result[len]))
+				result[len] += 39;
+		if (n / base == 0 && n < 0)
+			result[len + 1] = '-';
+		n /= base;
 		len++;
 	}
-	if (n > 0)
-		result[len] = (n % base) + '0';
-	else
-	{
-		result[0] = '-';
-		result[len + 1] = -(n % base) + '0';
-	}
-	if (base == 16)
-		if (!ft_isdigit((n % base) + '0'))
-			result[len] += 39;
-	return (result);
+	ft_strrev(result);
+	return (ft_strdup(result));
 }

@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 12:09:29 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/02/20 07:12:13 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/03/20 10:42:48 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ size_t	ft_strlen(const char *str)
 	size_t	i;
 
 	i = 0;
-	while (*str++)
+	if (!str || !*str)
+		return (0);
+	while (str[i])
 		i++;
 	return (i);
 }

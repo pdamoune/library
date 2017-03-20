@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 13:41:38 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/02/20 07:11:39 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/03/20 10:12:24 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char	*ft_strcpy(char *dest, const char *src)
 	int		i;
 
 	i = 0;
+	if (!src)
+		return (dest);
 	while (src[i] != '\0')
 	{
 		dest[i] = src[i];
