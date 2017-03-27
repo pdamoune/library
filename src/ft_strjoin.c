@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 21:21:23 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/03/20 10:24:08 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/03/27 10:26:29 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,5 @@ char	*ft_strjoin(char *str1, const char *str2)
 	ft_strcpy(s, str1);
 	ft_strcpy(&s[ft_strlen(str1)], str2);
 	s[len] = '\0';
-	ft_strdel(&str1);
 	return (s);
 }
