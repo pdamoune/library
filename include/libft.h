@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/03/20 17:10:38 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/04/02 23:04:33 by philippedamoune  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int			ft_isupper(int c);
 int			ft_toupper(int c);
 int			ft_islower(int c);
 int			ft_tolower(int c);
+void		ft_strtoupper(char *str);
 
 /*
 ** 				Outils chaines de carateres

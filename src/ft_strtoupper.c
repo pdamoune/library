@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strtoupper.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
+/*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 11:38:34 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/04/02 23:13:24 by philippedamoune  ###   ########.fr       */
+/*   Created: 2017/04/02 23:01:33 by philippe          #+#    #+#             */
+/*   Updated: 2017/04/02 23:15:01 by philippedamoune  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
 ** Converts the letter c to upper case, if possible.
 */
 
-int	ft_toupper(int c)
+void	ft_strtoupper(char *str)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	return (c);
+	int i;
+
+	i = -1;
+	while (str[++i])
+		str[i] = ft_toupper(str[i]);
 }
