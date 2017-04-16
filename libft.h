@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/04/14 17:22:54 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/04/16 20:06:34 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
-# define ABS(X) X < 0 ? -X : X
+# define ABS(X) X < 0 ? -(X) : X
 # define U unsigned
 # define L long
 
