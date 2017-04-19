@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 09:37:55 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/03/27 10:43:38 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/04/19 14:56:42 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int		ft_atoi(const char *str)
 	int		strnb;
 
 	n = 0;
+	s = 0;
 	strnb = 0;
 	while (ft_isspace(str[n]) == 1)
 		n++;

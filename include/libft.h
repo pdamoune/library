@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/04/02 23:04:33 by philippedamoune  ###   ########.fr       */
+/*   Updated: 2017/04/19 17:51:34 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include <unistd.h>
 # include <string.h>
 # define ABS(X) X < 0 ? -X : X
-# define U unsigned
-# define L long
 
 
 typedef struct s_list	t_list;
