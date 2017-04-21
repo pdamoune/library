@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 07:14:41 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/04/14 14:37:10 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/04/21 11:51:12 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,14 @@
 ** Affiche le nombre n en binaire.
 */
 
-void	ft_putnbr_bin(int n)
+void	ft_putnbr_bin(int n, int base)
 {
-	int i;
-
-	i = 32;
-	while (--i >= 0)
+	while (--base >= 0)
 	{
-		(1 << i) & n ? ft_putchar ('1') : ft_putchar('0');
-		if (i % 8 == 0)
+		(1 << base) & n ? ft_putchar ('1') : ft_putchar('0');
+		if (base % 8 == 0)
 			ft_putchar(' ');
 	}
-	ft_putchar('\n');
+	// ft_putchar('\n');
+	// ft_putchar('\n');
 }
