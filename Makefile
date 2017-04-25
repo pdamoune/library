@@ -6,7 +6,7 @@
 #    By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 18:34:34 by pdamoune          #+#    #+#              #
-#    Updated: 2017/04/16 20:06:38 by pdamoune         ###   ########.fr        #
+#    Updated: 2017/04/24 19:12:42 by philippedamoune  ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
@@ -54,4 +54,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean, fclean, re, all, $(NAME)
+.PHONY: clean, fclean, re, all
