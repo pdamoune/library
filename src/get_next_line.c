@@ -6,11 +6,12 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 20:43:40 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/02/23 11:32:19 by philippedamoune  ###   ########.fr       */
+/*   Updated: 2017/04/27 11:25:18 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/get_next_line.h"
+#include "../../algo/filler/1/include/filler.h"
 
 t_list		*ft_setlst(int fd)
 {
@@ -38,13 +39,27 @@ int			ft_gnl(char *next_line, char *buf, char **line)
 	while (line[0][i])
 		i++;
 	if (*line && ft_strchr(buf, '\n') - buf < 0)
-		*line = ft_memrealloc(*line, ft_strlen(*line), i + BUF_SIZE);
+		*line = ft_memrealloc(*line, ft_strlen(*line) + 1, i + BUF_SIZE);
 	else
 		*line = ft_memrealloc(*line, ft_strlen(*line), ft_strchr(buf, '\n')
 		- buf + i);
+	// dprintf(g_fd2, "\ni = %d\n\n", i);
+
 	while (buf[j] != '\n' && buf[j] != '\0')
-		line[0][i++] = buf[j++];
-	line[0][i] = 0;
+	{
+		(*line)[i++] = buf[j++];
+		// dprintf(g_fd2, "%s\n", *line);
+	}
+	(*line)[i] = 0;
+	// dprintf(g_fd2, "i = %s\n", *line);
+	// dprintf(g_fd, "i = %s\n", *line);
+
+	// dprintf(g_fd, "i %d\nj %d\n", i, j);
+	// dprintf(g_fd, "%s %d\n", *line, line[0][10]);
+	// dprintf(g_fd, "%s\n", *line);
+
+
+
 	if (buf[j] == '\n' && ft_strcpy(next_line, &tmp[j + 1]))
 		return (1);
 	ft_bzero(next_line, BUF_SIZE + 1);
@@ -77,9 +92,10 @@ int			get_next_line(const int fd, char **line)
 		if (i < 0)
 			return (-1);
 		buf[i] = 0;
-		if (ft_gnl(buf, buf, line) || i < BUF_SIZE)
+		if (ft_gnl(buf, buf, line))
 			return (1);
 	}
+
 	if (line[0][0])
 		return (1);
 	ft_lstdelone(&list, &del);

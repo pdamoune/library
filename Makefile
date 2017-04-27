@@ -6,7 +6,7 @@
 #    By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 18:34:34 by pdamoune          #+#    #+#              #
-#    Updated: 2017/04/24 19:12:42 by philippedamoune  ###   ########.fr        #
+#    Updated: 2017/04/26 16:48:25 by pdamoune         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
@@ -27,7 +27,7 @@ ft_strsub.c ft_strtrim.c ft_swap.c ft_tolower.c ft_toupper.c ft_count_occur.c \
 ft_conv_bin.c ft_strdift.c ft_sqrt_min.c ft_strcstr.c ft_putnbrel.c \
 ft_memrealloc.c ft_lst_find.c ft_displaytab.c ft_tabdel.c \
 ft_strcsplit.c ft_putnbr_bin.c ft_ulltoa_base.c ft_lltoa_base.c ft_putaddr.c \
-ft_strtoupper.c ft_putbin_base.c
+ft_strtoupper.c ft_putbin_base.c get_next_line.c
 HEADERS	=	libft.h
 CFLAGS	=	-Wall -Wextra -Werror
 CC		=	clang

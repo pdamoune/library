@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/04/21 11:11:29 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/04/27 03:28:28 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int			ft_strdift(const char *str1, const char *str2);
 
 void		ft_bzero(void *s, size_t n);
 void		ft_memdel(void **ap);
-void		ft_tabdel(char **tab);
+void		ft_tabdel(char **tab, int size);
 int			ft_memcmp(const void *str1, const void *str2, size_t n);
 void		*ft_memrealloc(void *ptr, size_t old_size, size_t new_size);
 void		*ft_memchr(const void *str, int c, size_t n);

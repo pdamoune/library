@@ -6,7 +6,7 @@
 /*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 15:44:06 by philippe          #+#    #+#             */
-/*   Updated: 2017/03/06 12:01:28 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/04/27 02:01:30 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ void	ft_displaytab(char **tab)
 	int		i;
 
 	i = 0;
-	while (*tab)
-		ft_putendl(*tab++);
+	while (tab[i])
+		ft_putendl(tab[i++]);
 }

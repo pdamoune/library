@@ -6,18 +6,18 @@
 /*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 15:49:08 by philippe          #+#    #+#             */
-/*   Updated: 2017/03/01 16:22:22 by philippedamoune  ###   ########.fr       */
+/*   Updated: 2017/04/27 03:29:08 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-void	ft_tabdel(char **tab)
+void	ft_tabdel(char **tab, int size)
 {
 	int	i;
 
 	i = 0;
-	while (tab[i])
+	while (i < size)
 		ft_strdel(&tab[i++]);
 	ft_memdel((void **)&tab);
 }
