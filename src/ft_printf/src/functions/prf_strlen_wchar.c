@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   prf_strlen_wchar.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 22:29:50 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/04/27 07:15:16 by pdamoune         ###   ########.fr       */
+/*   Created: 2017/04/25 17:19:07 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/04/26 19:51:05 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define BUF_SIZE 50
-# include "libft.h"
-# include <fcntl.h>
+#include "../../include/ft_printf.h"
 
-typedef struct s_struct		t_struct;
-
-struct		s_struct
+size_t	prf_strlen_wchar(int *str)
 {
-	int		fd;
-	char	buf[BUF_SIZE + 1];
-};
+	int		i;
+	size_t	error;
+	size_t	ret;
 
-int			get_next_line(const int fd, char **line);
-
-#endif
+	i = 0;
+	ret = 0;
+	if (!str || !*str)
+		return (0);
+	while (str[i])
+	{
+		error = ret++;
+		str[i] > 0x7f ? ret++ : 0;
+		str[i] > 0x7ff ? ret++ : 0;
+		str[i] > 0xffff ? ret++ : 0;
+		if ((int)ret > PRECI && FLAG_PRECISION)
+			return (error);
+		i++;
+	}
+	return (ret);
+}

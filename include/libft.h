@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/04/27 03:28:28 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/04/28 09:10:25 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 };
+
+/*
+** Fonctions perso
+*/
+
+int			ft_printf(const char *format, ...);
 
 /*
 ** Fonctions de comparaisons de caracteres

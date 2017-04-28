@@ -6,12 +6,11 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 20:43:40 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/04/27 11:25:18 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/04/28 09:33:29 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/get_next_line.h"
-#include "../../algo/filler/1/include/filler.h"
+#include "get_next_line.h"
 
 t_list		*ft_setlst(int fd)
 {
