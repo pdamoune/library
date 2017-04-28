@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/17 15:24:14 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/04/28 09:09:22 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/04/28 14:42:44 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@
 # define HEXA			(1 << 8)
 # define PRECISION		(1 << 9)
 # define MODIFIER		(1 << 10)
-# define DOLLAR			(1 << 11)
+# define BIN_SP			(1 << 11)
+# define BIN_HGT		(1 << 12)
 
 # define FLAG_MINUS		(FLAG & MINUS)
 # define FLAG_ZERO		(FLAG &	ZERO)
@@ -66,7 +67,8 @@
 # define FLAG_HEXA		(FLAG & HEXA)
 # define FLAG_PRECISION	(FLAG & PRECISION)
 # define FLAG_MODIFIER	(FLAG & MODIFIER)
-# define FLAG_DOLLAR	(FLAG & DOLLAR)
+# define FLAG_BIN_SP	(FLAG & BIN_SP)
+# define FLAG_BIN_HGT	(FLAG & BIN_HGT)
 # define FLAG_SIGN		(FLAG & SIGN_FLAG)
 # define SIGN_FLAG		0b111000
 
