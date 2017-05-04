@@ -6,13 +6,13 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/16 19:22:36 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/04/28 09:02:00 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/05/04 18:45:04 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_printf.h"
 
-void	prf_ulltoa_base(char *result, unsigned long long n, unsigned int base)
+void	prf_ulltoa_base(char *result, uintmax_t n, unsigned int base)
 {
 	int			len;
 	int			mod;

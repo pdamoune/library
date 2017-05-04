@@ -6,7 +6,7 @@
 /*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/25 02:54:26 by philippe          #+#    #+#             */
-/*   Updated: 2017/04/28 14:46:12 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/05/04 18:49:21 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ void	prf_set_flag_b(void)
 void	prf_type_b(void)
 {
 	t_data	data;
-	char	str[40];
+	char	str[80];
 	char	*s;
 	int		len;
 
-	prf_bzero(str, 40);
+	prf_bzero(str, 80);
 	s = str;
 	prf_set_arg(&data, 'u');
 	prf_ulltoa_base(s, data.ui, 2);

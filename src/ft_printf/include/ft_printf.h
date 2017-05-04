@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/17 15:24:14 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/04/28 14:42:44 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/05/04 18:44:53 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,8 +174,7 @@ int			prf_fill_wchar(int data);
 
 void		prf_color(const char *format);
 void		prf_lltoa_base(char *result, long long n, unsigned int base);
-void		prf_ulltoa_base(char *result,
-	unsigned long long n, unsigned int base);
+void		prf_ulltoa_base(char *result, uintmax_t n, unsigned int base);
 void		prf_set_arg(t_data *data, int c);
 size_t		prf_strlen_wchar(int *str);
 int			prf_wctoa(char **wc_conv, unsigned int wc);
