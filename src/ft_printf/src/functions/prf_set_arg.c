@@ -6,11 +6,12 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/16 17:55:25 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/04/28 02:41:40 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/05/05 12:40:14 by philippedamoune  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_printf.h"
+#include "stdio.h"
 
 void	prf_set_arg_unsigned(t_data *data)
 {
@@ -19,6 +20,8 @@ void	prf_set_arg_unsigned(t_data *data)
 		data->ui = (unsigned int)va_arg(AP, unsigned int);
 		return ;
 	}
+	MOD_K ? MOD = __MAX : 0;
+	MOD_K ? data->_ui = (__uint128_t)va_arg(AP, __uint128_t) : 0;
 	MOD_J ? MOD = MAX_T : 0;
 	MOD_J ? data->ui = (uintmax_t)va_arg(AP, uintmax_t) : 0;
 	MOD_Z ? MOD = SIZE_T : 0;

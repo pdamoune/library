@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/17 15:24:14 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/05/04 18:44:53 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/05/05 12:32:25 by philippedamoune  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@
 # define LONG_LONG		(1 << 3)
 # define MAX_T			(1 << 4)
 # define SIZE_T			(1 << 5)
+# define __MAX			(1 << 6)
 
 # define MOD_HH			(MOD & CHAR)
 # define MOD_H			(MOD & SHORT)
@@ -89,6 +90,7 @@
 # define MOD_LL			(MOD & LONG_LONG)
 # define MOD_J			(MOD & MAX_T)
 # define MOD_Z			(MOD & SIZE_T)
+# define MOD_K			(MOD & __MAX)
 
 /*
 **	MACRO to set the flags of the differents types.
@@ -138,6 +140,7 @@ union		u_data
 	wchar_t			*us;
 	intmax_t		si;
 	uintmax_t		ui;
+	__uint128_t		_ui;
 };
 
 /*
@@ -175,6 +178,7 @@ int			prf_fill_wchar(int data);
 void		prf_color(const char *format);
 void		prf_lltoa_base(char *result, long long n, unsigned int base);
 void		prf_ulltoa_base(char *result, uintmax_t n, unsigned int base);
+void		prf__ulltoa_base(char *result, __uint128_t n, unsigned int base);
 void		prf_set_arg(t_data *data, int c);
 size_t		prf_strlen_wchar(int *str);
 int			prf_wctoa(char **wc_conv, unsigned int wc);

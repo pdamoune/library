@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prf_ulltoa_base.c                                  :+:      :+:    :+:   */
+/*   prf__ulltoa_base.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/16 19:22:36 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/05/05 12:29:09 by philippedamoune  ###   ########.fr       */
+/*   Updated: 2017/05/05 12:45:10 by philippedamoune  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_printf.h"
 
-void	prf_ulltoa_base(char *result, uintmax_t n, unsigned int base)
+void	prf__ulltoa_base(char *result, __uint128_t n, unsigned int base)
 {
 	int			len;
 	int			mod;
+
 
 	len = 0;
 	result[len] = '0';
