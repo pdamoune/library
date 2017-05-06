@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/17 15:24:14 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/05/05 12:32:25 by philippedamoune  ###   ########.fr       */
+/*   Updated: 2017/05/06 04:35:34 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define I				FORM.iformat
 # define J				FORM.ibuffer
 # define RET			FORM.ret
+# define FD				FORM.fd
 
 # define FLAG			ARG.flags
 # define WIDTH			ARG.width
@@ -83,6 +84,7 @@
 # define MAX_T			(1 << 4)
 # define SIZE_T			(1 << 5)
 # define __MAX			(1 << 6)
+# define MFD			(1 << 7)
 
 # define MOD_HH			(MOD & CHAR)
 # define MOD_H			(MOD & SHORT)
@@ -91,6 +93,7 @@
 # define MOD_J			(MOD & MAX_T)
 # define MOD_Z			(MOD & SIZE_T)
 # define MOD_K			(MOD & __MAX)
+# define MOD_FD			(MOD & MFD)
 
 /*
 **	MACRO to set the flags of the differents types.
@@ -123,6 +126,7 @@ struct		s_form
 	int		iformat;
 	int		ibuffer;
 	int		ret;
+	int		fd;
 };
 
 struct		s_arg
@@ -196,6 +200,7 @@ void		prf_type_u(void);
 void		prf_type_x(void);
 void		prf_type_o(void);
 void		prf_type_b(void);
+void		prf_type_fd(void);
 
 /*
 **	LIBFT Functions.

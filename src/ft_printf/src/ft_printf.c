@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/17 15:23:08 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/04/28 09:06:11 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/05/05 17:42:16 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int		ft_printf(const char *format, ...)
 {
 	prf_bzero(&ARG, sizeof(t_arg));
 	prf_bzero(&FORM, sizeof(t_form));
+	FD = 1;
 	if (!prf_fill_buffer(format))
 		return (write(1, BUFFER, J) ? RET + J : RET + J);
 	va_start(AP, format);
@@ -43,6 +44,6 @@ int		ft_printf(const char *format, ...)
 		if (RET == -1 || !prf_fill_buffer(format))
 			break ;
 	}
-	RET != -1 ? (RET += J) && write(1, BUFFER, J) : write(1, BUFFER, J);
+	RET != -1 ? (RET += J) && write(FD, BUFFER, J) : write(FD, BUFFER, J);
 	return (RET);
 }

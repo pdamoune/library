@@ -6,11 +6,12 @@
 /*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/25 02:54:26 by philippe          #+#    #+#             */
-/*   Updated: 2017/05/05 12:33:45 by philippedamoune  ###   ########.fr       */
+/*   Updated: 2017/05/06 04:24:56 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_printf.h"
+#include "../../../../include/libft.h"
 
 void	prf_set_flag_b(void)
 {

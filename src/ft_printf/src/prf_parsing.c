@@ -6,14 +6,14 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/17 17:36:25 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/05/05 12:37:00 by philippedamoune  ###   ########.fr       */
+/*   Updated: 2017/05/06 04:56:13 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
 int		g_flags[6] = {'-', '0', '#', ' ', '+'};
-char	*g_modifiers[8] = {"hh", "h", "l", "ll", "j", "z", "k", 0};
+char	*g_modifiers[9] = {"hh", "h", "l", "ll", "j", "z", "k", "fd", 0};
 char	g_type[16] = {"sSpdDioOuUxXcC%"};
 
 int		prf_flags(const char *format)
@@ -48,7 +48,7 @@ int		prf_modifier(const char *format)
 	int i;
 
 	i = 0;
-	while (i < 7 && format[I])
+	while (i < 8 && format[I])
 	{
 		if (!prf_strncmp(g_modifiers[i], &format[I], prf_strlen(g_modifiers[i])))
 		{

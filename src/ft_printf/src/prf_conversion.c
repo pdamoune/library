@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/17 19:38:51 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/04/26 20:07:46 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/05/05 21:24:50 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,14 @@ t_conv		g_conv[] =
 
 void	prf_conversion(void)
 {
+	// t_data	data;
 	int	i;
 
 	i = 0;
+	// data.ptr = (char *)"\e[1;1H\e[2J";
+	MOD_FD ? g_form.fd = va_arg(AP, int) : 0;
+	// if (MOD_FD)
+	// 	prf_fill_data((char **)&data.ptr, 10);
 	while (TYPE != g_conv[i].id && g_conv[i].id != 0)
 		i++;
 	if (TYPE == 'C' || (TYPE == 'c' && MOD & MOD_L))

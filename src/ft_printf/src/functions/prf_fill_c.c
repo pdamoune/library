@@ -6,7 +6,7 @@
 /*   By: fanie13 <fanie13@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 13:18:39 by fanie13           #+#    #+#             */
-/*   Updated: 2017/04/28 14:42:48 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/05/05 17:42:14 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	prf_fill_c(int c)
 	if (J == SIZE_BUF)
 	{
 		RET += J;
-		write(1, BUFFER, J);
+		write(FD, BUFFER, J);
 		prf_bzero(BUFFER, SIZE_BUF);
 		J = 0;
 	}
