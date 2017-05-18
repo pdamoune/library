@@ -6,7 +6,7 @@
 #    By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 18:34:34 by pdamoune          #+#    #+#              #
-#    Updated: 2017/05/05 12:34:24 by philippedamoune  ###   ########.fr        #
+#    Updated: 2017/05/15 11:18:32 by pdamoune         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
@@ -27,6 +27,7 @@ SOURCES	=	ft_atoi.c \
 			ft_isxdigit.c \
 			ft_itoa.c \
 			ft_lstadd.c \
+			ft_lstadd_last.c \
 			ft_lstdel.c \
 			ft_lstdelone.c\
 			ft_lstiter.c \
