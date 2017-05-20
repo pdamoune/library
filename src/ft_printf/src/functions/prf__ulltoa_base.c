@@ -6,18 +6,16 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/16 19:22:36 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/05/06 04:16:54 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/05/19 03:38:19 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_printf.h"
-#include "../../../../include/libft.h"
 
 void	prf__ulltoa_base(char *result, __uint128_t n, unsigned int base)
 {
 	__uint128_t		len;
 	__uint128_t		mod;
-
 
 	len = 0;
 	result[len] = '0';

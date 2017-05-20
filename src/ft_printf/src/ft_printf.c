@@ -6,11 +6,17 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/17 15:23:08 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/05/05 17:42:16 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/05/19 07:40:00 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
+
+/*
+** To use the %b conversion, reffer to the file prf_type_b.c
+** To print color, reffer to the file prf_color.c
+** For the rest, reffer to the printf man 3.
+*/
 
 int		prf_fill_buffer(const char *format)
 {
@@ -44,6 +50,6 @@ int		ft_printf(const char *format, ...)
 		if (RET == -1 || !prf_fill_buffer(format))
 			break ;
 	}
-	RET != -1 ? (RET += J) && write(FD, BUFFER, J) : write(FD, BUFFER, J);
+	RET != -1 ? (RET += J) && write(FD, BUFFER, J) : write(2, BUFFER, J);
 	return (RET);
 }

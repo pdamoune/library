@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prf_ulltoa_base.c                                  :+:      :+:    :+:   */
+/*   ft_isint.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/16 19:22:36 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/05/19 02:08:08 by pdamoune         ###   ########.fr       */
+/*   Created: 2017/05/19 11:18:30 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/05/20 01:53:36 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_printf.h"
+#include "../include/libft.h"
 
-void	prf_ulltoa_base(char *result, uintmax_t n, unsigned int base)
+int		ft_isint(const char *nbr)
 {
-	int			len;
-	int			mod;
+	int i;
+	int	s;
 
-	len = 0;
-	result[len] = '0';
-	while (n > 0)
+	if (!nbr[0])
+		return (0);
+	i = (nbr[0] == '-' ? (s = 1)  : (s = 0));
+	while (nbr[i])
 	{
-		mod = n % base;
-		mod = ABS(mod);
-		result[len] = mod + '0';
-		if (base >= 10)
-			if (!prf_isdigit(result[len]))
-				result[len] += 39;
-		n /= base;
-		len++;
+		if (!ft_isdigit(nbr[i]) || i > 9 + s)
+			return (0);
+		if (i == 9 + s)
+		{
+			if ((!s && ft_strcmp(nbr, "2147483647") > 0)
+			|| (s && ft_strcmp(nbr, "-2147483648") > 0))
+				return (0);
+		}
+		i++;
 	}
-	prf_strrev(result);
+	if (s)
+		return (-1);
+	return (1);
 }

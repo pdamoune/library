@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/05/18 05:06:08 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/05/19 09:19:49 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void		ft_striteri(char *str, void (*f)(unsigned int, char *));
 void		ft_strdel(char **str);
 char		*ft_conv_bin(char *str, int b_one, int b_zero);
 int			ft_atoi(const char *str);
+long		ft_atol(const char *str);
 char		*ft_itoa(int n);
 char		*ft_lltoa_base(long long n, unsigned int base);
 char		*ft_ulltoa_base(unsigned long long n, unsigned int base);

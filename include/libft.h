@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/05/18 05:06:08 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/05/20 00:20:54 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 # include <unistd.h>
 # include <string.h>
 # include <limits.h>
+# include "../src/ft_error/include/ft_error.h"
 # define ABS(X) X < 0 ? -X : X
+// # define ERROR(X, Y) ft_error(X, Y, FILE, FUNC, LINE)
 
 
 typedef struct s_list	t_list;
@@ -32,8 +34,8 @@ struct		s_list
 ** Fonctions perso
 */
 
-int			get_next_line(const int fd, char **line);
-int			ft_printf(const char *format, ...);
+int		get_next_line(const int fd, char **line);
+int		ft_printf(const char *format, ...);
 
 /*
 ** Fonctions de comparaisons de caracteres
@@ -52,6 +54,7 @@ int			ft_toupper(int c);
 int			ft_islower(int c);
 int			ft_tolower(int c);
 void		ft_strtoupper(char *str);
+int			ft_isint(const char *nbr);
 
 /*
 ** 				Outils chaines de carateres
@@ -77,6 +80,7 @@ void		ft_striteri(char *str, void (*f)(unsigned int, char *));
 void		ft_strdel(char **str);
 char		*ft_conv_bin(char *str, int b_one, int b_zero);
 int			ft_atoi(const char *str);
+long		ft_atol(const char *str);
 char		*ft_itoa(int n);
 char		*ft_lltoa_base(long long n, unsigned int base);
 char		*ft_ulltoa_base(unsigned long long n, unsigned int base);

@@ -6,13 +6,14 @@
 #    By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 18:34:34 by pdamoune          #+#    #+#              #
-#    Updated: 2017/05/15 11:18:32 by pdamoune         ###   ########.fr        #
+#    Updated: 2017/05/19 18:45:06 by pdamoune         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
 
 NAME	=	libft.a
 SOURCES	=	ft_atoi.c \
+			ft_atol.c \
 			ft_bzero.c \
 			ft_count_c_words.c \
 			ft_isalnum.c \
@@ -25,6 +26,7 @@ SOURCES	=	ft_atoi.c \
 			ft_isspace.c\
 			ft_isupper.c \
 			ft_isxdigit.c \
+			ft_isint.c \
 			ft_itoa.c \
 			ft_lstadd.c \
 			ft_lstadd_last.c \
@@ -100,6 +102,7 @@ SOURCES	=	ft_atoi.c \
 			ft_strtoupper.c \
 			ft_putbin_base.c \
 			get_next_line/get_next_line.c \
+			ft_error/src/ft_error.c \
 			ft_printf/src/ft_printf.c \
 			ft_printf/src/prf_parsing.c \
 			ft_printf/src/prf_conversion.c \

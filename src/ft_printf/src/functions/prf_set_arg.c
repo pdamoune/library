@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/16 17:55:25 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/05/06 04:26:58 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/05/19 03:12:38 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	prf_set_arg_unsigned(t_data *data)
 		data->ui = (unsigned int)va_arg(AP, unsigned int);
 		return ;
 	}
-	MOD_K ? MOD = __MAX : 0;
-	MOD_K ? data->_ui = (__uint128_t)va_arg(AP, __uint128_t) : 0;
+	MOD_K && TYPE == 'b' ? MOD = __MAX : 0;
+	MOD_K && TYPE == 'b' ? data->vui = (__uint128_t)va_arg(AP, __uint128_t) : 0;
 	MOD_J ? MOD = MAX_T : 0;
 	MOD_J ? data->ui = (uintmax_t)va_arg(AP, uintmax_t) : 0;
 	MOD_Z ? MOD = SIZE_T : 0;

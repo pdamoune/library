@@ -6,11 +6,26 @@
 /*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/25 03:45:56 by philippe          #+#    #+#             */
-/*   Updated: 2017/04/28 09:03:25 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/05/19 03:35:28 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/prf_color.h"
+
+/*
+** To color your text with a specific color
+** {color}text{eoc}
+**
+** To color the background of you text with a specific color
+** {COLOR}text{EOC}
+**
+** To set a specific typography
+** {typography}text{eoa}
+**
+** notice that {eoa} tag, ends the hole 3 modifiers.
+** if you want to to bold only a word, you ll have to set the color and
+** the backgroud again.
+*/
 
 t_color g_colors[] =
 {

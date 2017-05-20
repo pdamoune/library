@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/17 15:24:14 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/05/06 04:35:34 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/05/19 07:40:03 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,7 +144,7 @@ union		u_data
 	wchar_t			*us;
 	intmax_t		si;
 	uintmax_t		ui;
-	__uint128_t		_ui;
+	__uint128_t		vui;
 };
 
 /*
@@ -200,7 +200,6 @@ void		prf_type_u(void);
 void		prf_type_x(void);
 void		prf_type_o(void);
 void		prf_type_b(void);
-void		prf_type_fd(void);
 
 /*
 **	LIBFT Functions.
