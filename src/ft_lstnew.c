@@ -6,7 +6,7 @@
 /*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 18:25:08 by philippe          #+#    #+#             */
-/*   Updated: 2017/05/22 22:43:12 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/05/23 10:50:12 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_list		*ft_lstnew(const void *content, size_t content_size)
 {
 	t_list	*newlst;
 
-	if ((newlst = (t_list *)malloc(sizeof(t_list *) * content_size)))
+	if ((newlst = (t_list *)malloc(sizeof(t_list))))
 	{
 		if (!(content))
 		{
