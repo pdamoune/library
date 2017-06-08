@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 22:31:59 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/03/01 16:37:55 by philippedamoune  ###   ########.fr       */
+/*   Updated: 2017/06/08 19:29:51 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ char		**ft_strsplit(const char *str, char c)
 	int		i;
 	int		words;
 
-	tmp = ft_strctrim(str, c);
-	if (tmp == NULL)
+	if (!(tmp = ft_strctrim(str, c)))
 		return (NULL);
 	words = ft_count_c_words(tmp, c) - 1;
 	tab = (char **)ft_memalloc(sizeof(char *) * (words + 1));

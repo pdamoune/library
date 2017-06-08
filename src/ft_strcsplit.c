@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 22:31:59 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/05/17 18:11:43 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/06/08 19:33:43 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ char		**ft_strcsplit(const char *str, char c)
 	{
 		while (tmp[i] && tmp[i] != c)
 			i++;
-		tmp[i] = 0;
 		tab[j] = ft_strdup(tmp);
 		free(tmp);
 		if (str[i])

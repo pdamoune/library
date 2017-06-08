@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/19 18:40:48 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/05/20 01:07:51 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/06/08 19:22:31 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,8 @@
 
 # define BAD_MALLOC 0
 # define BAD_FREE	1
-// # define COUCOU 1
-// # define COUCOU 1
-// # define COUCOU 1
-// # define COUCOU 1
-// # define COUCOU 1
-// # define COUCOU 1
-// # define COUCOU 1
-// # define COUCOU 1
-// # define COUCOU 1
-// # define COUCOU 1
-// # define COUCOU 1
-// # define COUCOU 1
 
 int		ft_printf(const char *format, ...);
-int 	ft_error(int code, ...);
+int		ft_error(int code, ...);
 
 #endif

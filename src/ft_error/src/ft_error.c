@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/19 18:39:22 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/05/20 01:08:24 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/06/08 19:22:54 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*g_error[10] =
 	"coucou"
 };
 
-int 	ft_error(int code, ...)
+int		ft_error(int code, ...)
 {
 	va_list		ap;
 	int			fd;

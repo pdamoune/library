@@ -6,13 +6,11 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/16 23:30:33 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/03/20 17:27:58 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/06/08 19:34:28 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
-
-
 
 char	*ft_ulltoa_base(unsigned long long n, unsigned int base)
 {

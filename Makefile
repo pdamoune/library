@@ -6,7 +6,7 @@
 #    By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 18:34:34 by pdamoune          #+#    #+#              #
-#    Updated: 2017/05/19 18:45:06 by pdamoune         ###   ########.fr        #
+#    Updated: 2017/05/30 15:05:36 by pdamoune         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
@@ -92,6 +92,7 @@ SOURCES	=	ft_atoi.c \
 			ft_putnbrel.c\
 			ft_memrealloc.c \
 			ft_lst_find.c \
+			ft_lstlen.c \
 			ft_displaytab.c \
 			ft_tabdel.c\
 			ft_strcsplit.c \

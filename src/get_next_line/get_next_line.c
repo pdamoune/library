@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 20:43:40 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/04/28 09:33:29 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/06/08 19:35:18 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,23 +42,9 @@ int			ft_gnl(char *next_line, char *buf, char **line)
 	else
 		*line = ft_memrealloc(*line, ft_strlen(*line), ft_strchr(buf, '\n')
 		- buf + i);
-	// dprintf(g_fd2, "\ni = %d\n\n", i);
-
 	while (buf[j] != '\n' && buf[j] != '\0')
-	{
 		(*line)[i++] = buf[j++];
-		// dprintf(g_fd2, "%s\n", *line);
-	}
 	(*line)[i] = 0;
-	// dprintf(g_fd2, "i = %s\n", *line);
-	// dprintf(g_fd, "i = %s\n", *line);
-
-	// dprintf(g_fd, "i %d\nj %d\n", i, j);
-	// dprintf(g_fd, "%s %d\n", *line, line[0][10]);
-	// dprintf(g_fd, "%s\n", *line);
-
-
-
 	if (buf[j] == '\n' && ft_strcpy(next_line, &tmp[j + 1]))
 		return (1);
 	ft_bzero(next_line, BUF_SIZE + 1);
@@ -94,7 +80,6 @@ int			get_next_line(const int fd, char **line)
 		if (ft_gnl(buf, buf, line))
 			return (1);
 	}
-
 	if (line[0][0])
 		return (1);
 	ft_lstdelone(&list, &del);

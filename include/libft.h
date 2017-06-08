@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/05/20 00:20:54 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/06/08 19:20:06 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <limits.h>
-# include "../src/ft_error/include/ft_error.h"
+# include <fcntl.h>
 # define ABS(X) X < 0 ? -X : X
 // # define ERROR(X, Y) ft_error(X, Y, FILE, FUNC, LINE)
 
@@ -155,5 +155,6 @@ void		ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 t_list		*ft_lstfind(t_list *list, void *data, int (*cmp)());
 void		ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+size_t		ft_lstlen(t_list *lst);
 
 #endif
