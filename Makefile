@@ -6,13 +6,24 @@
 #    By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 18:34:34 by pdamoune          #+#    #+#              #
-#    Updated: 2017/06/09 16:38:55 by pdamoune         ###   ########.fr        #
+#    Updated: 2017/06/09 23:19:45 by pdamoune         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
 
 NAME	=	libft.a
-SOURCES	=	ft_atoi.c \
+SOURCES	=	t_list/ft_lstadd.c \
+			t_list/ft_lstadd_last.c \
+			t_list/ft_lstdel.c \
+			t_list/ft_lstdelone.c\
+			t_list/ft_lstiter.c \
+			t_list/ft_lstmap.c \
+			t_list/ft_lstnew.c \
+			t_list/ft_lstfind.c \
+			t_list/ft_lstptr.c \
+			t_list/ft_lstlen.c \
+			t_list/ft_lstclr_last.c \
+			ft_atoi.c \
 			ft_atol.c \
 			ft_bzero.c \
 			ft_count_c_words.c \
@@ -28,13 +39,6 @@ SOURCES	=	ft_atoi.c \
 			ft_isxdigit.c \
 			ft_isint.c \
 			ft_itoa.c \
-			ft_lstadd.c \
-			ft_lstadd_last.c \
-			ft_lstdel.c \
-			ft_lstdelone.c\
-			ft_lstiter.c \
-			ft_lstmap.c \
-			ft_lstnew.c \
 			ft_memalloc.c \
 			ft_memccpy.c \
 			ft_memchr.c\
@@ -90,8 +94,6 @@ SOURCES	=	ft_atoi.c \
 			ft_strcstr.c \
 			ft_putnbrel.c\
 			ft_memrealloc.c \
-			ft_lst_find.c \
-			ft_lstlen.c \
 			ft_displaytab.c \
 			ft_tabdel.c\
 			ft_strcsplit.c \

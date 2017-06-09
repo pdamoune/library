@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_find.c                                      :+:      :+:    :+:   */
+/*   ft_lstptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/11 16:14:26 by philippe          #+#    #+#             */
-/*   Updated: 2017/05/22 20:14:56 by pdamoune         ###   ########.fr       */
+/*   Created: 2017/06/09 20:37:35 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/06/09 20:45:45 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../../include/libft.h"
 
-t_list	*ft_lstfind(t_list *list, void *data, int (*cmp)())
+/*
+** Create and malloc a list with the size of a ptr.
+** set the content to *ptr.
+** return the list.
+*/
+
+t_list	*ft_lstptr(void *ptr)
 {
-	while (list && cmp(list->content, data))
-		list = list->next;
-	return (list);
+	t_list	*tmp;
+
+	tmp = ft_lstnew(NULL, 0);
+	tmp->content = ptr;
+	return (tmp);
 }
