@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/06/08 19:20:06 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/06/09 16:38:47 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ char		*ft_strrchr(const char *str, int c);
 char		*ft_strstr(const char *haystack, const char *needle);
 char		*ft_strcstr(const char *haystack, const char *needle, int c);
 char		*ft_strnstr(const char *haystack, const char *ndl, size_t len);
-void		ft_strclr(char *str);
 void		ft_striter(char *str, void (*f)(char *));
 void		ft_striteri(char *str, void (*f)(unsigned int, char *));
 void		ft_strdel(char **str);

@@ -6,7 +6,7 @@
 #    By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 18:34:34 by pdamoune          #+#    #+#              #
-#    Updated: 2017/05/30 15:05:36 by pdamoune         ###   ########.fr        #
+#    Updated: 2017/06/09 16:38:55 by pdamoune         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
@@ -55,7 +55,6 @@ SOURCES	=	ft_atoi.c \
 			ft_sqrt.c \
 			ft_strcat.c \
 			ft_strchr.c\
-			ft_strclr.c \
 			ft_strcmp.c \
 			ft_strcpy.c \
 			ft_strctrim.c \

@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 20:43:40 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/06/08 19:35:18 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/06/09 17:59:42 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_list		*ft_setlst(int fd)
 	return (ft_lstnew(&file, sizeof(t_struct)));
 }
 
-int			cmp(t_struct *struc, int *fd)
+static int	cmp(t_struct *struc, int *fd)
 {
 	return (struc->fd - *fd);
 }
