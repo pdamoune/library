@@ -6,22 +6,25 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/09 23:14:25 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/06/09 23:43:38 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/06/12 17:51:48 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-void	ft_lstclr_last(t_list *lst)
+void	ft_lstclr_last(t_list **lst)
 {
-	if (lst->next)
+	t_list *tmp;
+
+	tmp = *lst;
+	if (tmp->next)
 	{
-		while (lst->next->next)
+		while (tmp->next->next)
 		{
-			lst = lst->next;
+			tmp = tmp->next;
 		}
-		lst->next->content = NULL;
-		free(lst->next);
-		lst->next = NULL;
+		tmp->next->content = NULL;
+		free(tmp->next);
+		tmp->next = NULL;
 	}
 }

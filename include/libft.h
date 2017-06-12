@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/06/09 23:38:50 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/06/12 18:57:15 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,7 +148,7 @@ void		ft_putnbr_fd(int n, int fd);
 
 t_list		*ft_lstnew(void const *content, size_t content_size);
 void		ft_lstadd(t_list **alst, t_list *new_list);
-void		ft_lstadd_last(t_list *alst, t_list *new_list);
+void		ft_lstadd_last(t_list **alst, t_list *new_list);
 void		ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void		ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 t_list		*ft_lstfind(t_list *list, void *data, int (*cmp)());
@@ -156,7 +156,8 @@ void		ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 size_t		ft_lstlen(t_list *lst);
 t_list		*ft_lstptr(void *ptr);
-void		ft_lstclr_last(t_list *lst);
+void		ft_lstclr_last(t_list **lst);
+t_list		*ft_lstlast(t_list *list);
 
 
 
