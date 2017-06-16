@@ -6,7 +6,7 @@
 /*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 16:14:26 by philippe          #+#    #+#             */
-/*   Updated: 2017/06/09 20:37:17 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/06/16 13:04:53 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@
 
 t_list	*ft_lstfind(t_list *list, void *data, int (*cmp)())
 {
+	if (!list)
+		return (NULL);
+	while (list->prev)
+		list = list->prev;
 	while (list && cmp(list->content, data))
 		list = list->next;
 	return (list);

@@ -6,7 +6,7 @@
 /*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 18:24:59 by philippe          #+#    #+#             */
-/*   Updated: 2017/06/09 23:14:33 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/06/16 12:46:23 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
 	t_list	*nxt;
 
-	if (!(alst && del))
+	if (!alst || !del)
 		return ;
 	while (*alst)
 	{

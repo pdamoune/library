@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstclr_last.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/17 18:24:55 by philippe          #+#    #+#             */
-/*   Updated: 2017/06/16 12:41:04 by pdamoune         ###   ########.fr       */
+/*   Created: 2017/06/09 23:14:25 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/06/16 16:48:33 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-/*
-** Ajoute l’élément new en tête de la liste.
-*/
-
-size_t	ft_lstlen(t_list *lst)
+void	ft_lstclr_last(t_list **lst)
 {
-	size_t	len;
+	t_list *tmp;
 
-	len = 0;
-	if (!lst)
-		return (0);
-	while (lst->prev)
-		lst = lst->prev;
-	while (lst)
+	if (!(*lst))
+		return ;
+	tmp = *lst;
+	if (tmp->next)
 	{
-		len++;
-		lst = lst->next;
+		while (tmp->next->next)
+			tmp = tmp->next;
+		tmp->next->content = NULL;
+		free(tmp->next);
+		tmp->next = NULL;
 	}
-	return (len);
 }

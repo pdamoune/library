@@ -6,11 +6,11 @@
 /*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 18:25:01 by philippe          #+#    #+#             */
-/*   Updated: 2017/05/18 01:10:27 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/06/16 13:07:23 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../../include/libft.h"
 
 /*
 ** Prend en paramètre l’adresse d’un pointeur sur un maillon et

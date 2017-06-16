@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstforeach.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/17 18:24:55 by philippe          #+#    #+#             */
-/*   Updated: 2017/06/16 12:41:04 by pdamoune         ###   ########.fr       */
+/*   Created: 2017/06/16 15:05:44 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/06/16 15:09:32 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-/*
-** Ajoute l’élément new en tête de la liste.
-*/
-
-size_t	ft_lstlen(t_list *lst)
+void 	ft_lstforeach(t_list *list, void (*f)(void *))
 {
-	size_t	len;
-
-	len = 0;
-	if (!lst)
-		return (0);
-	while (lst->prev)
-		lst = lst->prev;
-	while (lst)
+	if (!list)
+		return ;
+	while (list->prev)
+		list = list->prev;
+	while (list)
 	{
-		len++;
-		lst = lst->next;
+		f(list->content);
+		list = list->next;
 	}
-	return (len);
 }

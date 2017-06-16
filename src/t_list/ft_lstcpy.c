@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstptr.c                                        :+:      :+:    :+:   */
+/*   ft_lstcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/09 20:37:35 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/06/16 12:53:18 by pdamoune         ###   ########.fr       */
+/*   Created: 2017/06/16 18:21:02 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/06/16 19:15:30 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
 /*
-** Create and malloc a list with the size of a ptr.
-** set the content to *ptr.
-** return the list.
+** copy the hole list in a new list.
 */
 
-t_list	*ft_lstptr(void *ptr)
+t_list	*ft_lstcpy(t_list *src)
 {
+	t_list	*new_list;
 	t_list	*tmp;
 
-	tmp = ft_lstnew(NULL, 0);
-	tmp->content = ptr;
-	return (tmp);
+	if (!src)
+		return (NULL);
+	new_list = ft_lstptr(src->content);
+	while ((src = src->next))
+		ft_lstadd_last(&new_list, ft_lstptr(src->content));
+	while (new_list->next)
+	{
+		tmp = new_list;
+		new_list = new_list->next;
+		new_list->prev = tmp;
+	}
+	new_list = ft_lstfirst(new_list);
+	return (new_list);
 }

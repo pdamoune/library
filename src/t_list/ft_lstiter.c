@@ -6,11 +6,11 @@
 /*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 18:25:03 by philippe          #+#    #+#             */
-/*   Updated: 2017/02/20 07:10:13 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/06/16 12:42:24 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../../include/libft.h"
 
 /*
 ** Parcourt la liste lst en appliquant à chaque maillon la fonction
@@ -19,7 +19,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	if (lst == NULL || f == NULL)
+	if (!lst || !f)
 		return ;
 	while (lst)
 	{

@@ -6,11 +6,11 @@
 /*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 18:25:08 by philippe          #+#    #+#             */
-/*   Updated: 2017/05/23 10:50:12 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/06/16 18:51:33 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../../include/libft.h"
 
 /*
 ** Alloue (avec malloc(3)) et retourne un maillon “frais”. Les
@@ -27,20 +27,14 @@ t_list		*ft_lstnew(const void *content, size_t content_size)
 {
 	t_list	*newlst;
 
-	if ((newlst = (t_list *)malloc(sizeof(t_list))))
-	{
-		if (!(content))
-		{
-			newlst->content = NULL;
-			newlst->content_size = 0;
-			newlst->next = NULL;
-			return (newlst);
-		}
-		newlst->content = ft_memalloc(content_size);
-		ft_memcpy(newlst->content, content, content_size);
-		newlst->content_size = content_size;
-		newlst->next = NULL;
+	if (!(newlst = ft_memalloc(sizeof(t_list))))
+		return (NULL);
+	if (!(content))
 		return (newlst);
-	}
-	return (NULL);
+	newlst->content = ft_memalloc(content_size);
+	ft_memcpy(newlst->content, content, content_size);
+	newlst->content_size = content_size;
+	newlst->next = NULL;
+	newlst->prev = NULL;
+	return (newlst);
 }
