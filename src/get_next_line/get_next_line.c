@@ -6,25 +6,11 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 20:43:40 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/06/09 17:59:42 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/06/20 17:51:23 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-t_list		*ft_setlst(int fd)
-{
-	t_struct	file;
-
-	file.fd = fd;
-	ft_bzero(file.buf, BUF_SIZE + 1);
-	return (ft_lstnew(&file, sizeof(t_struct)));
-}
-
-static int	cmp(t_struct *struc, int *fd)
-{
-	return (struc->fd - *fd);
-}
 
 int			ft_gnl(char *next_line, char *buf, char **line)
 {
@@ -51,25 +37,15 @@ int			ft_gnl(char *next_line, char *buf, char **line)
 	return (0);
 }
 
-void		del(void *tmp, size_t size)
-{
-	ft_bzero(tmp, size);
-	free((t_struct *)tmp);
-}
-
 int			get_next_line(const int fd, char **line)
 {
-	static t_list	*list = NULL;
+	static char		buffer[BUF_SIZE + 1];
 	char			*buf;
 	int				i;
 
 	if (fd < 0 || !line || !(*line = ft_memalloc(BUF_SIZE + 1)))
 		return (-1);
-	if (!list)
-		list = ft_setlst(fd);
-	if (!(ft_lstfind(list, (void *)&fd, &cmp)))
-		ft_lstadd(&list, ft_setlst(fd));
-	buf = (((t_struct *)ft_lstfind(list, (void *)&fd, &cmp)->content)->buf);
+	buf = buffer;
 	if (buf[0] && ft_gnl(buf, buf, line))
 		return (1);
 	while ((i = read(fd, buf, BUF_SIZE)))
@@ -82,6 +58,5 @@ int			get_next_line(const int fd, char **line)
 	}
 	if (line[0][0])
 		return (1);
-	ft_lstdelone(&list, &del);
 	return (0);
 }

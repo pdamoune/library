@@ -6,7 +6,7 @@
 #    By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 18:34:34 by pdamoune          #+#    #+#              #
-#    Updated: 2017/06/16 18:33:14 by pdamoune         ###   ########.fr        #
+#    Updated: 2017/06/19 14:28:04 by pdamoune         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
@@ -15,6 +15,7 @@ NAME	=	libft.a
 SOURCES	=	t_list/ft_lstadd_first.c \
 			t_list/ft_lstadd_last.c \
 			t_list/ft_lstadd.c \
+			t_list/ft_lstclr_first.c \
 			t_list/ft_lstclr_last.c \
 			t_list/ft_lstcpy.c \
 			t_list/ft_lstdel.c \
