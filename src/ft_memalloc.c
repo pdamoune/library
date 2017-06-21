@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 20:25:36 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/05/05 23:16:22 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/06/21 20:22:39 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memalloc(size_t size)
 {
 	char	*mem;
 
-	if (!(mem = (void *)malloc(sizeof(void *) * size)))
+	if (!(mem = malloc(size)))
 		return (NULL);
 	ft_bzero(mem, size);
 	return ((void *)mem);

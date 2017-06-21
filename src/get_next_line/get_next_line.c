@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 20:43:40 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/06/20 17:51:23 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/06/21 20:35:25 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,14 @@ int			ft_gnl(char *next_line, char *buf, char **line)
 	while (line[0][i])
 		i++;
 	if (*line && ft_strchr(buf, '\n') - buf < 0)
+	{
 		*line = ft_memrealloc(*line, ft_strlen(*line) + 1, i + BUF_SIZE);
+	}
 	else
+	{
 		*line = ft_memrealloc(*line, ft_strlen(*line), ft_strchr(buf, '\n')
-		- buf + i);
+		- buf + i + 1);
+	}
 	while (buf[j] != '\n' && buf[j] != '\0')
 		(*line)[i++] = buf[j++];
 	(*line)[i] = 0;
