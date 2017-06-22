@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 20:43:40 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/06/21 20:35:25 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/06/22 17:00:09 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ int			ft_gnl(char *next_line, char *buf, char **line)
 		i++;
 	if (*line && ft_strchr(buf, '\n') - buf < 0)
 	{
-		*line = ft_memrealloc(*line, ft_strlen(*line) + 1, i + BUF_SIZE);
+		*line = ft_memrealloc(*line, ft_strlen(*line) + 1, i + BUF_SIZE + 1);
 	}
 	else
 	{
-		*line = ft_memrealloc(*line, ft_strlen(*line), ft_strchr(buf, '\n')
+		*line = ft_memrealloc(*line, ft_strlen(*line) + 1, ft_strchr(buf, '\n')
 		- buf + i + 1);
 	}
 	while (buf[j] != '\n' && buf[j] != '\0')

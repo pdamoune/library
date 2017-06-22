@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 20:28:52 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/02/20 06:01:54 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/06/22 11:16:20 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 void	ft_memdel(void **ap)
 {
-	if (!ap)
+	if (!ap || !*ap)
 		return ;
 	free(*ap);
 	*ap = NULL;
