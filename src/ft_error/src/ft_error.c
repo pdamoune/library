@@ -6,29 +6,36 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/19 18:39:22 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/06/08 19:22:54 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/07/09 17:35:47 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_error.h"
 
-char	*g_error[10] =
-{
-	"You have a bad malloc",
-	"You try to free something not malloc",
-	"coucou"
-};
+/*
+** int args = nombre d arguments en plus des 3 de base.
+** ... = file, function, line
+** ... =
+*/
 
-int		ft_error(int code, ...)
+int		ft_error(int args, ...)
 {
 	va_list		ap;
-	int			fd;
+	void 		(*f)(int);
+	int			err;
 
-	fd = FD;
-	va_start(ap, code);
-	ft_printf("%@\n{red}Erreur %d -%s-{eoc}\n\n", FD, code, g_error[code]);
-	ft_printf("%@  {cya}File     = %s{eoc}\n", FD, va_arg(ap, char *));
-	ft_printf("%@  {gre}Function = %s\n{eoc}", FD, va_arg(ap, char *));
-	ft_printf("%@  {mag}Line     = %d\n{eoc}\n", FD, va_arg(ap, int));
+	va_start(ap, args);
+	err = va_arg(ap, int);
+	ft_printf("%@\n=====================================================\n", 2);
+	ft_printf("%@|{red}ERROR :{eoc}\n", 2);
+	ft_printf("%@|{mag}   File{eoc}     : %s\n", 2, va_arg(ap, char *));
+	ft_printf("%@|{cya}   Function{eoc} : %s\n", 2, va_arg(ap, char *));
+	ft_printf("%@|{yel}   Line{eoc}     : %d\n", 2, va_arg(ap, int));
+	ft_printf("%@=====================================================\n\n", 2);
+
+	while (args--)
+		ft_printf("erreur = %s\n", va_arg(ap, char *));
+	f = va_arg(ap, void *);
+	f(err);
 	return (-1);
 }
