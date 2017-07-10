@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/19 11:18:30 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/06/09 21:41:59 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/07/10 19:32:48 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@ int		ft_isint(const char *nbr)
 	i = sign;
 	while (nbr[i])
 	{
-		if (!ft_isdigit(nbr[i]) || i > 9 + sign)
+		if (i > 9 + sign)
 			return (0);
 		if (i == 9 + sign)
 			if ((!sign && ft_strcmp(nbr, "2147483647") > 0)
 			|| (nbr[0] == '-' && ft_strcmp(nbr, "-2147483648") > 0))
 				return (0);
+		if (!ft_isdigit(nbr[i]))
+			break ;
 		i++;
 	}
 	return (1);

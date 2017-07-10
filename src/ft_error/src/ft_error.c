@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/19 18:39:22 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/07/09 17:35:47 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/07/10 14:29:20 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,12 @@ int		ft_error(int args, ...)
 	ft_printf("%@=====================================================\n\n", 2);
 
 	while (args--)
-		ft_printf("erreur = %s\n", va_arg(ap, char *));
+	{
+		ft_printf("{red}erreur :{eoc}\n");
+		ft_printf("%5c%s\n", 0, va_arg(ap, char *));
+	}
 	f = va_arg(ap, void *);
 	f(err);
+	va_end(ap);
 	return (-1);
 }

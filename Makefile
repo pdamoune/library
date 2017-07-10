@@ -6,7 +6,7 @@
 #    By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 18:34:34 by pdamoune          #+#    #+#              #
-#    Updated: 2017/06/19 14:28:04 by pdamoune         ###   ########.fr        #
+#    Updated: 2017/07/10 15:08:30 by pdamoune         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
@@ -65,6 +65,7 @@ SOURCES	=	t_list/ft_lstadd_first.c \
 			ft_sqrt.c \
 			ft_strcat.c \
 			ft_strchr.c\
+			ft_strclr.c\
 			ft_strcmp.c \
 			ft_strcpy.c \
 			ft_strctrim.c \

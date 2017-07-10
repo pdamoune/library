@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 20:43:40 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/06/23 22:20:52 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/07/10 16:41:31 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ int			get_next_line(const int fd, char **line)
 	}
 	if (line[0][0])
 		return (1);
+	ft_strdel(line);
 	return (0);
 }

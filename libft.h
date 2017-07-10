@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/07/10 14:22:25 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/07/10 15:08:18 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ char		*ft_itoa(int n);
 char		*ft_lltoa_base(long long n, unsigned int base);
 char		*ft_ulltoa_base(unsigned long long n, unsigned int base);
 void		ft_swap(int *a, int *b);
+void		ft_strclr(char *s);
 void		ft_sort_params(int argc, char **argv);
 char		*ft_strrev(char *str);
 char		*ft_strnew(size_t size);
