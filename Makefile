@@ -6,7 +6,7 @@
 #    By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 18:34:34 by pdamoune          #+#    #+#              #
-#    Updated: 2017/07/10 15:08:30 by pdamoune         ###   ########.fr        #
+#    Updated: 2017/07/13 10:52:22 by pdamoune         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
@@ -29,6 +29,8 @@ SOURCES	=	t_list/ft_lstadd_first.c \
 			t_list/ft_lstmap.c \
 			t_list/ft_lstnew.c \
 			t_list/ft_lstptr.c \
+			t_list/ft_lstdup.c \
+			t_list/ft_lstptrdel.c \
 			ft_atoi.c \
 			ft_atol.c \
 			ft_bzero.c \

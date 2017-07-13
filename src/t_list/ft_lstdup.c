@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclr_last.c                                   :+:      :+:    :+:   */
+/*   ft_lstdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/09 23:14:25 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/07/13 06:41:20 by pdamoune         ###   ########.fr       */
+/*   Created: 2017/07/13 06:30:05 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/07/13 06:48:12 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-void	ft_lstclr_last(t_list **lst)
+t_list	*ft_lstdup(t_list *list)
 {
-	t_list *tmp;
+	t_list	*dest;
+	t_list	*tmp;
 
-	if (!(*lst))
-		return ;
-	tmp = *lst;
-	if (tmp->next)
+	dest = NULL;
+	while (list)
 	{
-		while (tmp->next->next)
-			tmp = tmp->next;
-		tmp->next->content = NULL;
-		free(tmp->next);
-		tmp->next = NULL;
+		tmp = ft_lstptr(list->content);
+		if (!dest)
+			dest = tmp;
+		else
+			ft_lstadd_last(&dest, tmp);
+
+		list = list->next;
 	}
+	return (dest);
 }

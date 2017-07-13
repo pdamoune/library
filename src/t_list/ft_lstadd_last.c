@@ -6,7 +6,7 @@
 /*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 18:24:55 by philippe          #+#    #+#             */
-/*   Updated: 2017/06/16 16:41:49 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/07/13 02:02:51 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ void	ft_lstadd_last(t_list **alst, t_list *new_list)
 	tmp = *alst;
 	while (tmp->next)
 		tmp = tmp->next;
+	new_list->prev = tmp;
 	tmp->next = new_list;
 }

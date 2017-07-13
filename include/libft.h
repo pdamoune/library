@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/07/10 14:22:25 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/07/13 10:52:10 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,6 +153,7 @@ void		ft_lstclr_first(t_list **lst);
 void		ft_lstclr_last(t_list **lst);
 t_list		*ft_lstcpy(t_list *new_list);
 void		ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void		ft_lstptrdel(t_list **alst);
 void		ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 t_list		*ft_lstfind(t_list *list, void *data, int (*cmp)());
 t_list		*ft_lstfirst(t_list *list);
@@ -163,5 +164,6 @@ size_t		ft_lstlen(t_list *lst);
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list		*ft_lstnew(void const *content, size_t content_size);
 t_list		*ft_lstptr(void *ptr);
+t_list		*ft_lstdup(t_list *list);
 
 #endif

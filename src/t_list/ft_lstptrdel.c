@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclr_last.c                                   :+:      :+:    :+:   */
+/*   ft_lstptrdel.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/09 23:14:25 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/07/13 06:41:20 by pdamoune         ###   ########.fr       */
+/*   Created: 2017/07/13 10:50:32 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/07/13 10:55:05 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-void	ft_lstclr_last(t_list **lst)
+void	ft_lstptrdel(t_list **alst)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
-	if (!(*lst))
-		return ;
-	tmp = *lst;
-	if (tmp->next)
+	while ((tmp = (*alst)->next))
 	{
-		while (tmp->next->next)
-			tmp = tmp->next;
-		tmp->next->content = NULL;
-		free(tmp->next);
-		tmp->next = NULL;
+		free(*alst);
+		*alst = tmp;
 	}
+	ft_memdel((void *)&(*alst));
 }
