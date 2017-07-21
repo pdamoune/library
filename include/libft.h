@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/07/13 10:52:10 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/07/20 17:32:55 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,5 +165,7 @@ t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list		*ft_lstnew(void const *content, size_t content_size);
 t_list		*ft_lstptr(void *ptr);
 t_list		*ft_lstdup(t_list *list);
+int			ft_lstsortlen(t_list *list);
+void		ft_lstswap_content(t_list *lst1, t_list *lst2);
 
 #endif

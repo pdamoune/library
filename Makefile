@@ -6,7 +6,7 @@
 #    By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 18:34:34 by pdamoune          #+#    #+#              #
-#    Updated: 2017/07/13 10:52:22 by pdamoune         ###   ########.fr        #
+#    Updated: 2017/07/20 17:33:32 by pdamoune         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
@@ -26,6 +26,8 @@ SOURCES	=	t_list/ft_lstadd_first.c \
 			t_list/ft_lstiter.c \
 			t_list/ft_lstlast.c \
 			t_list/ft_lstlen.c \
+			t_list/ft_lstswap_content.c \
+			t_list/ft_lstsort_len.c \
 			t_list/ft_lstmap.c \
 			t_list/ft_lstnew.c \
 			t_list/ft_lstptr.c \
