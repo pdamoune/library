@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/07/20 17:32:55 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/08/02 14:27:10 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,7 @@ void		ft_putnbr_fd(int n, int fd);
 */
 
 void		ft_lstadd_first(t_list **alst, t_list *new_list);
-void		ft_lstadd_last(t_list **alst, t_list *new_list);
+int			ft_lstadd_last(t_list **alst, t_list *new_list);
 void		ft_lstadd(t_list **alst, t_list *new_list);
 void		ft_lstclr_first(t_list **lst);
 void		ft_lstclr_last(t_list **lst);
