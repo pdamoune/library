@@ -6,7 +6,7 @@
 /*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 18:25:01 by philippe          #+#    #+#             */
-/*   Updated: 2017/06/16 13:07:23 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/08/03 15:20:44 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,23 @@
 
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
+	t_list	*prev;
+	t_list	*next;
+
 	del((*alst)->content, (*alst)->content_size);
-	ft_memdel((void *)&(*alst));
+	prev = (*alst)->prev;
+	next = (*alst)->next;
+	if (!prev)
+	{
+		free(*alst);
+		*alst = next;
+	}
+	else
+	{
+		prev->next = next;
+		if (next)
+			next->prev = prev;
+		free(*alst);
+	}
+	// ft_memdel((void *)&(*alst));
 }

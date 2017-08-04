@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/19 11:18:30 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/08/02 19:00:41 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/08/03 15:50:20 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int		ft_isint(const char *nbr)
 			if ((!sign && ft_strcmp(nbr, "2147483647") > 0)
 			|| (nbr[0] == '-' && ft_strcmp(nbr, "-2147483648") > 0))
 				return (0);
+		if (!ft_isdigit(nbr[i]))
+        	break ;
 		i++;
 	}
 	return (1);

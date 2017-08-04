@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstcheck.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/17 18:25:03 by philippe          #+#    #+#             */
-/*   Updated: 2017/08/04 11:55:23 by pdamoune         ###   ########.fr       */
+/*   Created: 2017/08/04 11:39:09 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/08/04 11:42:44 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-/*
-** Parcourt la liste lst en appliquant à chaque maillon la fonction
-** f.
-*/
-
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+void 	ft_lstcheck(t_list *list, void (*disp)(void *))
 {
-	if (!lst || !f)
-		return ;
-	while (lst->prev)
-		lst = lst->prev;
-
-	while (lst)
+	while (list)
 	{
-		f(lst);
-		lst = lst->next;
+		if (list->prev && (list = list->prev))
+			continue ;
 	}
 }
