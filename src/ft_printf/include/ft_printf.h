@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/17 15:24:14 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/07/27 16:53:45 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/08/10 21:40:05 by philippedamoune  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,6 +174,7 @@ void		prf_set_x(char *str);
 void		prf_fill_c(int c);
 void		prf_fill_data(char **data, int len);
 int			prf_fill_wchar(int data);
+int			prf_fill_buffer(const char *format);
 
 /*
 **	LIB PRINTF Functions.

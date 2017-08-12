@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/17 19:38:51 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/05/19 03:21:04 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/08/09 23:05:49 by philippedamoune  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	prf_conversion(void)
 	else if (TYPE == 'S' || (TYPE == 's' && MOD & MOD_L))
 		!prf_type_us() ? RET = -1 : 0;
 	else if (TYPE == '@')
-		g_form.fd = va_arg(AP, int);
+		(g_form.fd = va_arg(AP, int)) == -1 ? RET = -1 : 0;
 	else
 		(g_conv[i].fonction)();
 }
