@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/09 23:14:25 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/07/26 18:56:20 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/08/09 14:55:44 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ void	ft_lstclr_last(t_list **lst)
 	{
 		while (tmp->next->next)
 			tmp = tmp->next;
+		tmp->next->prev = NULL;
 		tmp->next->content = NULL;
+		tmp->next->next = NULL;
 		free(tmp->next);
 		tmp->next = NULL;
 	}
-	else if (*lst)
+	else
 	{
 		free(*lst);
 		*lst = NULL;
