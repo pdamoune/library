@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/29 16:24:04 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/08/12 21:24:45 by philippedamoune  ###   ########.fr       */
+/*   Updated: 2017/08/14 20:41:25 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@ void	prf_fill_data(char **data, int len)
 		prf_fill_c(*(*data)++);
 	if (**data == '{')
 	{
-		prf_color(*data);
-		*data = &data[0][5];
-		prf_fill_data(data, len - 5);
 		i = I;
 		I = 0;
 		prf_color(*data);
