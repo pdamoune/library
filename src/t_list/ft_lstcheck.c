@@ -6,13 +6,13 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 11:39:09 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/08/04 11:42:44 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/08/15 17:44:12 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-void 	ft_lstcheck(t_list *list, void (*disp)(void *))
+void	ft_lstcheck(t_list *list, void (*disp)(void *))
 {
 	while (list)
 	{

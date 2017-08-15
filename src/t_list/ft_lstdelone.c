@@ -6,7 +6,7 @@
 /*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 18:25:01 by philippe          #+#    #+#             */
-/*   Updated: 2017/08/03 15:20:44 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/08/15 17:44:29 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,4 @@ void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 			next->prev = prev;
 		free(*alst);
 	}
-	// ft_memdel((void *)&(*alst));
 }
