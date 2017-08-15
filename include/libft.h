@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/08/02 14:27:10 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/08/15 19:56:39 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,7 +152,7 @@ void		ft_lstadd(t_list **alst, t_list *new_list);
 void		ft_lstclr_first(t_list **lst);
 void		ft_lstclr_last(t_list **lst);
 t_list		*ft_lstcpy(t_list *new_list);
-void		ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void		ft_lstdel(t_list **alst, void (*del)(void *));
 void		ft_lstptrdel(t_list **alst);
 void		ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 t_list		*ft_lstfind(t_list *list, void *data, int (*cmp)());

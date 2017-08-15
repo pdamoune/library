@@ -6,7 +6,7 @@
 /*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 18:24:59 by philippe          #+#    #+#             */
-/*   Updated: 2017/06/16 12:46:23 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/08/15 20:06:34 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 ** la partie obligatoire).
 */
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+void	ft_lstdel(t_list **alst, void (*del)(void *))
 {
 	t_list	*nxt;
 
@@ -30,7 +30,8 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 	while (*alst)
 	{
 		nxt = (*alst)->next;
-		del((*alst)->content, sizeof(*alst));
+		if ((*alst)->content)
+			del((*alst)->content);
 		free(*alst);
 		*alst = nxt;
 	}
