@@ -6,7 +6,7 @@
 #    By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 18:34:34 by pdamoune          #+#    #+#              #
-#    Updated: 2017/07/20 17:33:32 by pdamoune         ###   ########.fr        #
+#    Updated: 2017/10/30 10:54:44 by pdamoune         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
@@ -154,22 +154,31 @@ SOURCES	=	t_list/ft_lstadd_first.c \
 			ft_printf/src/functions/prf_isspace.c \
 			ft_printf/src/functions/prf_strrev.c
 
-HEADERS	=	libft.h
 CFLAGS	=	-Wall -Wextra -Werror
-CC		=	clang
-PATHSRC =	src
-PATHINC	=	include
-PATHOBJ	=	obj
+DEBUG	=	-g3
+NOFLAGS =	-Wno-format
+
+CC		=	gcc
+
+PATHSRC =	srcs
+PATHINC	=	includes
+PATHOBJ	=	objs
+
 OBJETS	=	$(patsubst %.c,$(PATHOBJ)/%.o,$(SOURCES))
 
-all: $(NAME)
+all:
+		@make -j $(NAME)
 
-$(PATHOBJ)/%.o: $(PATHSRC)/%.c
-	@mkdir -p $(PATHOBJ)
-	@mkdir -p $(dir $(OBJETS))
-	$(CC) $(CFLAGS) -I $(PATHINC) -c $< -o $@
+$(PATHOBJ) :
+		@mkdir -p $(PATHOBJ)
+		@mkdir -p $(dir $(OBJETS))
 
-$(NAME): $(OBJETS)
+$(PATHOBJ)/%.o: $(PATHSRC)/%.c Makefile | $(PATHOBJ)
+		@printf "\r\033[1;32m. Compiling .\033[0m\033[K \033[1;31m$<"
+		@$(CC) $(CFLAGS) -I $(PATHINC) -MMD -c $< -o $@
+
+$(NAME): $(OBJETS) $(PATHOBJ)
+		@printf "\r\e[2K\e[1;36m[${NAME}]\e[1;32m Done\e[0m\n"
 		@ar rc $(NAME) $(OBJETS)
 		@ranlib $(NAME)
 
@@ -180,5 +189,7 @@ fclean: clean
 		@rm -f $(NAME)
 
 re: fclean all
+
+-include $(OBJETS:.o=.d)
 
 .PHONY: clean, fclean, re, all
