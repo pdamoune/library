@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclr_first.c                                  :+:      :+:    :+:   */
+/*   prf_bzero.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/09 23:14:25 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/10/30 14:47:32 by pdamoune         ###   ########.fr       */
+/*   Created: 2016/11/08 13:46:21 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/04/28 09:00:06 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <ft_printf.h>
 
-void	ft_lstclr_first(t_list **lst)
+/*
+** Sets the first n bytes of the area starting at s to zero (bytes
+** containing '\0').
+*/
+
+void	prf_bzero(void *s, size_t n)
 {
-	t_list *tmp;
+	char	*str;
+	size_t	i;
 
-	if (!(*lst))
-		return ;
-	tmp = *lst;
-	while (tmp->prev)
-		tmp = tmp->prev;
-	*lst = tmp->next;
-	(*lst)->prev = NULL;
-	tmp->content = NULL;
-	free(tmp->prev);
-	tmp->prev = NULL;
-
+	str = (char *)s;
+	i = 0;
+	while (i < n)
+		str[i++] = '\0';
 }

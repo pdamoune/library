@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclr_first.c                                  :+:      :+:    :+:   */
+/*   prf_type_c.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/09 23:14:25 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/10/30 14:47:32 by pdamoune         ###   ########.fr       */
+/*   Created: 2017/04/17 19:54:14 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/05/05 17:36:52 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <ft_printf.h>
 
-void	ft_lstclr_first(t_list **lst)
+void	prf_set_flag_c(char *str)
 {
-	t_list *tmp;
+	FLAG &= TWO_FLAG;
+	!str[0] && FLAG_MINUS ? J++ && WIDTH-- : 0;
+	FLAG &= ~PRECISION;
+}
 
-	if (!(*lst))
-		return ;
-	tmp = *lst;
-	while (tmp->prev)
-		tmp = tmp->prev;
-	*lst = tmp->next;
-	(*lst)->prev = NULL;
-	tmp->content = NULL;
-	free(tmp->prev);
-	tmp->prev = NULL;
+void	prf_type_c(void)
+{
+	char	str[21];
+	char	*ptr;
+	int		len;
 
+	str[1] = 0;
+	ptr = str;
+	len = 1;
+	str[0] = (TYPE == 'c' ? va_arg(AP, int) : (int)TYPE);
+	prf_set_flag_c(ptr);
+	prf_set_padding(&ptr, len);
+	prf_fill_data(&ptr, len);
+	!FLAG_MINUS && !str[0] ? J++ : 0;
 }

@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclr_first.c                                  :+:      :+:    :+:   */
+/*   prf_strrev.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/09 23:14:25 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/10/30 14:47:32 by pdamoune         ###   ########.fr       */
+/*   Created: 2016/11/10 15:25:37 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/04/28 09:01:28 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <ft_printf.h>
 
-void	ft_lstclr_first(t_list **lst)
+/*
+** Inverse la chaine de caractere str
+*/
+
+char	*prf_strrev(char *str)
 {
-	t_list *tmp;
+	int		n;
+	int		m;
+	char	rev;
 
-	if (!(*lst))
-		return ;
-	tmp = *lst;
-	while (tmp->prev)
-		tmp = tmp->prev;
-	*lst = tmp->next;
-	(*lst)->prev = NULL;
-	tmp->content = NULL;
-	free(tmp->prev);
-	tmp->prev = NULL;
-
+	m = 0;
+	n = 0;
+	while (str[m])
+		m++;
+	m--;
+	while (n < m)
+	{
+		rev = str[m];
+		str[m] = str[n];
+		str[n] = rev;
+		n++;
+		m--;
+	}
+	return (str);
 }

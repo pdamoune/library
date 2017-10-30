@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclr_first.c                                  :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/09 23:14:25 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/10/30 14:47:32 by pdamoune         ###   ########.fr       */
+/*   Created: 2017/04/17 15:23:08 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/10/30 17:18:13 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <ft_printf.h>
 
-void	ft_lstclr_first(t_list **lst)
+int			ft_vdprintf(int fd, const char *format, va_list ap)
 {
-	t_list *tmp;
+	FD = fd;
+	va_copy(AP, ap);
+	return (do_printf(format));
+}
 
-	if (!(*lst))
-		return ;
-	tmp = *lst;
-	while (tmp->prev)
-		tmp = tmp->prev;
-	*lst = tmp->next;
-	(*lst)->prev = NULL;
-	tmp->content = NULL;
-	free(tmp->prev);
-	tmp->prev = NULL;
+int			ft_dprintf(int fd, const char *format, ...)
+{
+	va_start(AP, format);
+	return (ft_vdprintf(fd, format, AP));
+}
 
+int			ft_printf(const char *format, ...)
+{
+	va_start(AP, format);
+	return (ft_vdprintf(1, format, AP));
 }

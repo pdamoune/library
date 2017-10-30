@@ -6,29 +6,50 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/08/15 19:56:39 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/10/30 18:18:22 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+# include <stdarg.h>
 # include <unistd.h>
 # include <string.h>
 # include <limits.h>
 # include <fcntl.h>
+
+# define INFO			__FILE__, __FUNCTION__, __LINE__
+# define ERR(n, ...)	ft_error(n, INFO, ##__VA_ARGS__)
+
+# define MSG			"%@{BLU}{bol}%s, %s, %4d{EOC} - |{red}"
+# define DG(f, ...)		ft_printf(MSG f "{eoc}|\n", 2, INFO, ##__VA_ARGS__)
+
 # define ABS(X) X < 0 ? -X : X
-# define INFO	__FILE__, __FUNCTION__, __LINE__
 
-typedef struct s_list	t_list;
 
-struct		s_list
+typedef struct	s_list
 {
 	void			*content;
-	size_t			content_size;
 	struct s_list	*next;
 	struct s_list	*prev;
-};
+}				t_list;
+
+typedef struct	s_cliopts
+{
+	char			c;
+	char			*str;
+	long int		flag_on;
+	long int		flag_off;
+	int				(*get)();
+	unsigned int	arg_required;
+}				t_cliopts;
+
+typedef struct	s_data_template
+{
+	uint64_t		flag;
+	char			**av_data;
+}				t_data_template;
 
 /*
 ** Fonctions perso
@@ -36,26 +57,34 @@ struct		s_list
 
 int			get_next_line(const int fd, char **line);
 int			ft_printf(const char *format, ...);
-int			ft_error(int args, ...);
+int			ft_dprintf(int fd, const char *format, ...);
+int			ft_vdprintf(int fd, const char *format, va_list ap);
+int			ft_error(int code, ...);
+int			cliopts_get(char **av, t_cliopts opt_map[], void *data);
+t_cliopts	*cliopts_getmap_long(t_cliopts opt_map[], char *arg);
+t_cliopts	*cliopts_getmap_short(t_cliopts opt_map[], char arg);
 
 /*
 ** Fonctions de comparaisons de caracteres
 */
 
-int			ft_isblank(int c);
-int			ft_isspace(int c);
-int			ft_isalpha(int c);
-int			ft_isdigit(int c);
 int			ft_isalnum(int c);
+int			ft_isalpha(int c);
 int			ft_isascii(int c);
-int			ft_isxdigit(int c);
-int			ft_isprint(int c);
-int			ft_isupper(int c);
-int			ft_toupper(int c);
+int			ft_isblank(int c);
+int			ft_isdigit(int c);
 int			ft_islower(int c);
-int			ft_tolower(int c);
-void		ft_strtoupper(char *str);
+int			ft_isprint(int c);
+int			ft_isspace(int c);
+int			ft_isupper(int c);
+int			ft_isxdigit(int c);
 int			ft_isint(const char *nbr);
+
+int			ft_toupper(int c);
+int			ft_tolower(int c);
+
+void		ft_strtoupper(char *str);
+
 
 /*
 ** 				Outils chaines de carateres
@@ -132,15 +161,12 @@ void		ft_putnbr_bin(int n, int base);
 void		ft_putnbr(int n);
 void		ft_displaytab(char **tab);
 void		ft_putaddr(void *ptr);
-
-/*
-**				Fonctions file descriptor
-*/
-
 void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(const char *str, int fd);
 void		ft_putendl_fd(const char *str, int fd);
 void		ft_putnbr_fd(int n, int fd);
+void		ft_lstdisp_int(t_list *list);
+void		ft_lstdisp_str(t_list *list);
 
 /*
 ** 				Listes chainees
@@ -154,7 +180,7 @@ void		ft_lstclr_last(t_list **lst);
 t_list		*ft_lstcpy(t_list *new_list);
 void		ft_lstdel(t_list **alst, void (*del)(void *));
 void		ft_lstptrdel(t_list **alst);
-void		ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void		ft_lstdelone(t_list **alst, void (*del)(void *));
 t_list		*ft_lstfind(t_list *list, void *data, int (*cmp)());
 t_list		*ft_lstfirst(t_list *list);
 void		ft_lstforeach(t_list *list, void (*f)(void *));
@@ -162,7 +188,7 @@ void		ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list		*ft_lstlast(t_list *list);
 size_t		ft_lstlen(t_list *lst);
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-t_list		*ft_lstnew(void const *content, size_t content_size);
+t_list		*ft_lstnew(void const *content);
 t_list		*ft_lstptr(void *ptr);
 t_list		*ft_lstdup(t_list *list);
 int			ft_lstsortlen(t_list *list);

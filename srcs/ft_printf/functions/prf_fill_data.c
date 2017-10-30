@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclr_first.c                                  :+:      :+:    :+:   */
+/*   prf_fill_data.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/09 23:14:25 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/10/30 14:47:32 by pdamoune         ###   ########.fr       */
+/*   Created: 2017/03/29 16:24:04 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/08/15 17:42:41 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <ft_printf.h>
 
-void	ft_lstclr_first(t_list **lst)
+void	prf_fill_data(char **data, int len)
 {
-	t_list *tmp;
+	int i;
 
-	if (!(*lst))
+	if (!*data)
 		return ;
-	tmp = *lst;
-	while (tmp->prev)
-		tmp = tmp->prev;
-	*lst = tmp->next;
-	(*lst)->prev = NULL;
-	tmp->content = NULL;
-	free(tmp->prev);
-	tmp->prev = NULL;
-
+	while (**data && **data != '{' && len--)
+		prf_fill_c(*(*data)++);
+	if (**data == '{')
+	{
+		i = I;
+		I = 0;
+		prf_color(*data);
+		I = i;
+		*data += 5;
+		prf_fill_data(data, len - 4);
+	}
+	*data = NULL;
 }

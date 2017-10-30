@@ -6,163 +6,170 @@
 #    By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 18:34:34 by pdamoune          #+#    #+#              #
-#    Updated: 2017/10/30 10:54:44 by pdamoune         ###   ########.fr        #
+#    Updated: 2017/10/30 17:16:52 by pdamoune         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
 
 NAME	=	libft.a
-SOURCES	=	t_list/ft_lstadd_first.c \
-			t_list/ft_lstadd_last.c \
+SOURCES	=	array/ft_sort_params.c \
+			cliopts_get.c \
+			cliopts_getmap.c \
+			conversion/ft_atoi.c \
+			conversion/ft_atol.c \
+			conversion/ft_conv_bin.c \
+			conversion/ft_itoa.c \
+			conversion/ft_lltoa_base.c \
+			conversion/ft_tolower.c \
+			conversion/ft_toupper.c \
+			conversion/ft_ulltoa_base.c \
+			display/ft_displaytab.c \
+			display/ft_putaddr.c \
+			display/ft_putbin_base.c \
+			display/ft_putchar.c \
+			display/ft_putchar_fd.c \
+			display/ft_putendl.c \
+			display/ft_putendl_fd.c \
+			display/ft_putfloat_bin.c \
+			display/ft_putnbr.c \
+			display/ft_putnbr_bin.c \
+			display/ft_putnbr_fd.c \
+			display/ft_putnbrel.c \
+			display/ft_putstr.c \
+			display/ft_putstr_fd.c \
+			free/ft_strdel.c \
+			free/ft_tabdel.c \
+			ft_error.c \
+			ft_printf/conversions/prf_type_b.c \
+			ft_printf/conversions/prf_type_c.c \
+			ft_printf/conversions/prf_type_d.c \
+			ft_printf/conversions/prf_type_o.c \
+			ft_printf/conversions/prf_type_s.c \
+			ft_printf/conversions/prf_type_u.c \
+			ft_printf/conversions/prf_type_uc.c \
+			ft_printf/conversions/prf_type_us.c \
+			ft_printf/conversions/prf_type_x.c \
+			ft_printf/do_printf.c \
+			ft_printf/ft_printf.c \
+			ft_printf/functions/prf__ulltoa_base.c \
+			ft_printf/functions/prf_atoi.c \
+			ft_printf/functions/prf_bzero.c \
+			ft_printf/functions/prf_color.c \
+			ft_printf/functions/prf_fill_c.c \
+			ft_printf/functions/prf_fill_data.c \
+			ft_printf/functions/prf_fill_wchar.c \
+			ft_printf/functions/prf_isblank.c \
+			ft_printf/functions/prf_isdigit.c \
+			ft_printf/functions/prf_isspace.c \
+			ft_printf/functions/prf_lltoa_base.c \
+			ft_printf/functions/prf_set_arg.c \
+			ft_printf/functions/prf_set_precision.c \
+			ft_printf/functions/prf_set_prefixe.c \
+			ft_printf/functions/prf_set_x.c \
+			ft_printf/functions/prf_strlen.c \
+			ft_printf/functions/prf_strlen_wchar.c \
+			ft_printf/functions/prf_strncmp.c \
+			ft_printf/functions/prf_strncpy.c \
+			ft_printf/functions/prf_strrev.c \
+			ft_printf/functions/prf_strtoupper.c \
+			ft_printf/functions/prf_toupper.c \
+			ft_printf/functions/prf_ulltoa_base.c \
+			ft_printf/functions/prf_wctoa.c \
+			ft_printf/prf_conversion.c \
+			ft_printf/prf_parsing.c \
+			ft_printf/prf_set_padding.c \
+			get_next_line.c \
+			integer/ft_isalnum.c \
+			integer/ft_isalpha.c \
+			integer/ft_isascii.c \
+			integer/ft_isblank.c \
+			integer/ft_isdigit.c \
+			integer/ft_isint.c \
+			integer/ft_islower.c \
+			integer/ft_isprint.c \
+			integer/ft_isspace.c \
+			integer/ft_isupper.c \
+			integer/ft_isxdigit.c \
+			integer/ft_sqrt.c \
+			integer/ft_sqrt_min.c \
+			integer/ft_swap.c \
+			memory/ft_bzero.c \
+			memory/ft_memalloc.c \
+			memory/ft_memccpy.c \
+			memory/ft_memchr.c \
+			memory/ft_memcmp.c \
+			memory/ft_memcpy.c \
+			memory/ft_memdel.c \
+			memory/ft_memmove.c \
+			memory/ft_memrealloc.c \
+			memory/ft_memset.c \
+			string/ft_count_c_words.c \
+			string/ft_count_occur.c \
+			string/ft_strcat.c \
+			string/ft_strchr.c \
+			string/ft_strclr.c \
+			string/ft_strcmp.c \
+			string/ft_strcpy.c \
+			string/ft_strcsplit.c \
+			string/ft_strcstr.c \
+			string/ft_strctrim.c \
+			string/ft_strdift.c \
+			string/ft_strdup.c \
+			string/ft_strequ.c \
+			string/ft_striter.c \
+			string/ft_striteri.c \
+			string/ft_strjoin.c \
+			string/ft_strlcat.c \
+			string/ft_strlen.c \
+			string/ft_strmap.c \
+			string/ft_strmapi.c \
+			string/ft_strncat.c \
+			string/ft_strncmp.c \
+			string/ft_strncpy.c \
+			string/ft_strnequ.c \
+			string/ft_strnew.c \
+			string/ft_strnstr.c \
+			string/ft_strrchr.c \
+			string/ft_strrev.c \
+			string/ft_strsplit.c \
+			string/ft_strstr.c \
+			string/ft_strsub.c \
+			string/ft_strtoupper.c \
+			string/ft_strtrim.c \
 			t_list/ft_lstadd.c \
+			t_list/ft_lstadd_first.c \
+			t_list/ft_lstadd_last.c \
 			t_list/ft_lstclr_first.c \
 			t_list/ft_lstclr_last.c \
 			t_list/ft_lstcpy.c \
 			t_list/ft_lstdel.c \
-			t_list/ft_lstdelone.c\
+			t_list/ft_lstdelone.c \
+			t_list/ft_lstdisp_int.c \
+			t_list/ft_lstdisp_str.c \
+			t_list/ft_lstdup.c \
 			t_list/ft_lstfind.c \
 			t_list/ft_lstfirst.c \
 			t_list/ft_lstforeach.c \
 			t_list/ft_lstiter.c \
 			t_list/ft_lstlast.c \
 			t_list/ft_lstlen.c \
-			t_list/ft_lstswap_content.c \
-			t_list/ft_lstsort_len.c \
 			t_list/ft_lstmap.c \
 			t_list/ft_lstnew.c \
 			t_list/ft_lstptr.c \
-			t_list/ft_lstdup.c \
 			t_list/ft_lstptrdel.c \
-			ft_atoi.c \
-			ft_atol.c \
-			ft_bzero.c \
-			ft_count_c_words.c \
-			ft_isalnum.c \
-			ft_isalpha.c\
-			ft_isascii.c \
-			ft_isblank.c \
-			ft_isdigit.c \
-			ft_islower.c \
-			ft_isprint.c \
-			ft_isspace.c\
-			ft_isupper.c \
-			ft_isxdigit.c \
-			ft_isint.c \
-			ft_itoa.c \
-			ft_memalloc.c \
-			ft_memccpy.c \
-			ft_memchr.c\
-			ft_memcmp.c \
-			ft_memcpy.c \
-			ft_memdel.c \
-			ft_memmove.c \
-			ft_memset.c \
-			ft_putchar.c\
-			ft_putchar_fd.c \
-			ft_putendl.c \
-			ft_putendl_fd.c \
-			ft_putnbr.c \
-			ft_putnbr_fd.c\
-			ft_putstr.c \
-			ft_putstr_fd.c \
-			ft_sort_params.c \
-			ft_sqrt.c \
-			ft_strcat.c \
-			ft_strchr.c\
-			ft_strclr.c\
-			ft_strcmp.c \
-			ft_strcpy.c \
-			ft_strctrim.c \
-			ft_strdel.c \
-			ft_strdup.c\
-			ft_strequ.c \
-			ft_striter.c \
-			ft_striteri.c \
-			ft_strjoin.c \
-			ft_strlcat.c \
-			ft_strlen.c\
-			ft_strmap.c \
-			ft_strmapi.c \
-			ft_strncat.c \
-			ft_strncmp.c \
-			ft_strncpy.c \
-			ft_strnequ.c\
-			ft_strnew.c \
-			ft_strnstr.c \
-			ft_strrchr.c \
-			ft_strrev.c \
-			ft_strsplit.c \
-			ft_strstr.c\
-			ft_strsub.c \
-			ft_strtrim.c \
-			ft_swap.c \
-			ft_tolower.c \
-			ft_toupper.c \
-			ft_count_occur.c\
-			ft_conv_bin.c \
-			ft_strdift.c \
-			ft_sqrt_min.c \
-			ft_strcstr.c \
-			ft_putnbrel.c\
-			ft_memrealloc.c \
-			ft_displaytab.c \
-			ft_tabdel.c\
-			ft_strcsplit.c \
-			ft_putnbr_bin.c \
-			ft_ulltoa_base.c \
-			ft_lltoa_base.c \
-			ft_putaddr.c\
-			ft_strtoupper.c \
-			ft_putbin_base.c \
-			get_next_line/get_next_line.c \
-			ft_error/src/ft_error.c \
-			ft_printf/src/ft_printf.c \
-			ft_printf/src/prf_parsing.c \
-			ft_printf/src/prf_conversion.c \
-			ft_printf/src/prf_set_padding.c \
-			ft_printf/src/conversions/prf_type_s.c \
-			ft_printf/src/conversions/prf_type_c.c \
-			ft_printf/src/conversions/prf_type_uc.c \
-			ft_printf/src/conversions/prf_type_us.c \
-			ft_printf/src/conversions/prf_type_d.c \
-			ft_printf/src/conversions/prf_type_u.c \
-			ft_printf/src/conversions/prf_type_x.c \
-			ft_printf/src/conversions/prf_type_b.c \
-			ft_printf/src/conversions/prf_type_o.c \
-			ft_printf/src/functions/prf_set_precision.c \
-			ft_printf/src/functions/prf_fill_c.c \
-			ft_printf/src/functions/prf_fill_data.c \
-			ft_printf/src/functions/prf_fill_wchar.c \
-			ft_printf/src/functions/prf_set_x.c \
-			ft_printf/src/functions/prf_set_prefixe.c \
-			ft_printf/src/functions/prf_lltoa_base.c \
-			ft_printf/src/functions/prf_ulltoa_base.c \
-			ft_printf/src/functions/prf__ulltoa_base.c \
-			ft_printf/src/functions/prf_wctoa.c \
-			ft_printf/src/functions/prf_strlen_wchar.c \
-			ft_printf/src/functions/prf_set_arg.c \
-			ft_printf/src/functions/prf_color.c \
-			ft_printf/src/functions/prf_atoi.c \
-			ft_printf/src/functions/prf_strtoupper.c \
-			ft_printf/src/functions/prf_bzero.c \
-			ft_printf/src/functions/prf_strlen.c \
-			ft_printf/src/functions/prf_toupper.c \
-			ft_printf/src/functions/prf_isblank.c \
-			ft_printf/src/functions/prf_strncmp.c \
-			ft_printf/src/functions/prf_isdigit.c \
-			ft_printf/src/functions/prf_strncpy.c \
-			ft_printf/src/functions/prf_isspace.c \
-			ft_printf/src/functions/prf_strrev.c
+			t_list/ft_lstsort_len.c \
+			t_list/ft_lstswap_content.c
 
 CFLAGS	=	-Wall -Wextra -Werror
 DEBUG	=	-g3
-NOFLAGS =	-Wno-format
 
 CC		=	gcc
 
 PATHSRC =	srcs
 PATHINC	=	includes
 PATHOBJ	=	objs
+
+INCLUDE =	-I $(PATHINC)
 
 OBJETS	=	$(patsubst %.c,$(PATHOBJ)/%.o,$(SOURCES))
 
@@ -181,6 +188,9 @@ $(NAME): $(OBJETS) $(PATHOBJ)
 		@printf "\r\e[2K\e[1;36m[${NAME}]\e[1;32m Done\e[0m\n"
 		@ar rc $(NAME) $(OBJETS)
 		@ranlib $(NAME)
+
+files:
+		$(shell find srcs | grep "\.c" | cut -c6- | sed  's/\.c/\.c \\/' > files)
 
 clean:
 		@rm -rf $(PATHOBJ)

@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclr_first.c                                  :+:      :+:    :+:   */
+/*   prf_fill_wchar.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/09 23:14:25 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/10/30 14:47:32 by pdamoune         ###   ########.fr       */
+/*   Created: 2017/04/25 21:44:59 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/04/28 09:03:04 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <ft_printf.h>
 
-void	ft_lstclr_first(t_list **lst)
+int		prf_fill_wchar(int data)
 {
-	t_list *tmp;
+	char	wc[5];
+	char	*ptr2;
 
-	if (!(*lst))
-		return ;
-	tmp = *lst;
-	while (tmp->prev)
-		tmp = tmp->prev;
-	*lst = tmp->next;
-	(*lst)->prev = NULL;
-	tmp->content = NULL;
-	free(tmp->prev);
-	tmp->prev = NULL;
-
+	ptr2 = wc;
+	if (data > 0x7f || (data <= 0xff && MB_CUR_MAX == 1))
+	{
+		ptr2 = wc;
+		if (!prf_wctoa((char **)&ptr2, data))
+			return (0);
+		if ((int)prf_strlen(wc) <= PRECI)
+			prf_fill_data(&ptr2, 4);
+	}
+	else
+		prf_fill_c(data);
+	return (1);
 }

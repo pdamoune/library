@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclr_first.c                                  :+:      :+:    :+:   */
+/*   cliopts_getmap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/09 23:14:25 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/10/30 14:47:32 by pdamoune         ###   ########.fr       */
+/*   Created: 2017/10/30 15:01:35 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/10/30 15:59:37 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-void	ft_lstclr_first(t_list **lst)
+t_cliopts	*cliopts_getmap_long(t_cliopts opt_map[], char *arg)
 {
-	t_list *tmp;
+	int		i;
 
-	if (!(*lst))
-		return ;
-	tmp = *lst;
-	while (tmp->prev)
-		tmp = tmp->prev;
-	*lst = tmp->next;
-	(*lst)->prev = NULL;
-	tmp->content = NULL;
-	free(tmp->prev);
-	tmp->prev = NULL;
+	i = -1;
+	while (opt_map[++i].c)
+		if (!ft_strcmp(opt_map[i].str, arg))
+			return (&opt_map[i]);
+	return (NULL);
+}
 
+t_cliopts	*cliopts_getmap_short(t_cliopts opt_map[], char arg)
+{
+	int		i;
+
+	i = -1;
+	while (opt_map[++i].c)
+		if (opt_map[i].c == arg)
+			return (&opt_map[i]);
+	return (NULL);
 }

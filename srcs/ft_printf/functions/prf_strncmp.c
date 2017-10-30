@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclr_first.c                                  :+:      :+:    :+:   */
+/*   prf_strncmp.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/09 23:14:25 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/10/30 14:47:32 by pdamoune         ###   ########.fr       */
+/*   Created: 2016/11/08 09:33:59 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/04/28 09:01:17 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <ft_printf.h>
 
-void	ft_lstclr_first(t_list **lst)
+/*
+** Compares at most the first n bytes of str1 and str2
+*/
+
+int		prf_strncmp(const char *str1, const char *str2, size_t n)
 {
-	t_list *tmp;
+	size_t	i;
 
-	if (!(*lst))
-		return ;
-	tmp = *lst;
-	while (tmp->prev)
-		tmp = tmp->prev;
-	*lst = tmp->next;
-	(*lst)->prev = NULL;
-	tmp->content = NULL;
-	free(tmp->prev);
-	tmp->prev = NULL;
-
+	i = 0;
+	while (((unsigned char)str1[i] == (unsigned char)str2[i])
+	&& str1[i] && str2[i] && i < n)
+		i++;
+	if (i == n)
+		return ((unsigned char)str1[i - 1] - (unsigned char)str2[i - 1]);
+	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 }

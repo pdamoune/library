@@ -6,7 +6,7 @@
 /*   By: philippe <philippe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 18:25:01 by philippe          #+#    #+#             */
-/*   Updated: 2017/08/15 17:44:29 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/10/30 14:48:27 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@
 ** similaire à la fonction ft_memdel de la partie obligatoire).
 */
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+void	ft_lstdelone(t_list **alst, void (*del)(void *))
 {
 	t_list	*prev;
 	t_list	*next;
 
-	del((*alst)->content, (*alst)->content_size);
+	del((*alst)->content);
 	prev = (*alst)->prev;
 	next = (*alst)->next;
 	if (!prev)
