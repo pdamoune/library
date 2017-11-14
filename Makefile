@@ -6,7 +6,7 @@
 #    By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 18:34:34 by pdamoune          #+#    #+#              #
-#    Updated: 2017/10/30 17:16:52 by pdamoune         ###   ########.fr        #
+#    Updated: 2017/11/14 06:40:03 by pdamoune         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
@@ -136,6 +136,7 @@ SOURCES	=	array/ft_sort_params.c \
 			string/ft_strsub.c \
 			string/ft_strtoupper.c \
 			string/ft_strtrim.c \
+			string/ft_tablen.c \
 			t_list/ft_lstadd.c \
 			t_list/ft_lstadd_first.c \
 			t_list/ft_lstadd_last.c \

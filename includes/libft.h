@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/10/30 18:18:22 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/11/14 10:26:28 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <string.h>
 # include <limits.h>
 # include <fcntl.h>
+# include <error.h>
 
 # define INFO			__FILE__, __FUNCTION__, __LINE__
 # define ERR(n, ...)	ft_error(n, INFO, ##__VA_ARGS__)
@@ -132,6 +133,7 @@ int			ft_sqrt_min(int nb);
 int			ft_strequ(const char *str1, const char *str2);
 int			ft_strnequ(const char *str1, const char *str2, size_t n);
 int			ft_strdift(const char *str1, const char *str2);
+int			ft_tablen(char **tab);
 
 /*
 ** 				Outils zone memoire
@@ -139,7 +141,7 @@ int			ft_strdift(const char *str1, const char *str2);
 
 void		ft_bzero(void *s, size_t n);
 void		ft_memdel(void **ap);
-void		ft_tabdel(char **tab, int size);
+void		ft_tabdel(void **tab, int size);
 int			ft_memcmp(const void *str1, const void *str2, size_t n);
 void		*ft_memrealloc(void *ptr, size_t old_size, size_t new_size);
 void		*ft_memchr(const void *str, int c, size_t n);

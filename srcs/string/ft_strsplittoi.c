@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_c_words.c                                 :+:      :+:    :+:   */
+/*   ft_strsplittoi.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/12 16:57:04 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/11/14 08:30:27 by pdamoune         ###   ########.fr       */
+/*   Created: 2017/11/14 04:57:45 by pdamoune          #+#    #+#             */
+/*   Updated: 2017/11/14 10:47:44 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-/*
-** Permet de compter le nombre de mots dans str, avec comme separateur c.
-*/
-
-int		ft_count_c_words(const char *str, char c)
+int		*ft_strsplittoi(char *str, int size)
 {
-	int		words;
+	int		*tab;
 	int		i;
 
-	i = 0;
-	words = 0;
-	if (!str)
-		return (words);
-	while (str[i])
+	if (!(tab = ft_memalloc(sizeof(int) * size)))
+		return (0);
+	i = ft_strlen(str);
+	while (--i >= 0)
 	{
-		while (str[i] && str[i] == c)
-			i++;
-		if (str[i] && str[i] != c)
-			words++;
-		while (str[i] && str[i] != c)
-			i++;
+		if (ft_isspace(str[i]))
+			continue ;
+		str[i + 1] = 0;
+		while (i && ft_isdigit(str[i]))
+			i--;
+		if (str[i] == '-' || str[i] == '+')
+			if (i)
+				i--;
+		if (!ft_isint(&str[i]))
+			return (NULL);
+		tab[--size] = ft_atoi(&str[i]);
+		str[i] = 0;
 	}
-	return (words);
+	return (tab);
 }

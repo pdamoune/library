@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/19 18:39:22 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/10/30 18:11:29 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/11/14 13:43:10 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ char	*g_error[] =
 	"Unknown error 0",
 	"Invalid option -%c",
 	"Invalid option --%s",
-	"Option '%c' awaits argument(s): please don't combine",
 	"Option '%c': missing argument",
 	"Option '%s': missing argument",
 	"Option '%c': not a valid argument",
@@ -34,6 +33,12 @@ char	*g_error[] =
 	"Error: Memory allocation error",
 	"%s: Failed to open file: %s",
 	"%s: %s",
+	"Parsing: invalid file = %s",
+	"Parsing: invalid line = %s",
+	"Parsing: empty line = %s",
+	"Mlx error: mlx = %p",
+	"Mlx error: win = %p",
+	"Mlx error: img = %p",
 };
 
 int		ft_error(int err, ...)
@@ -50,7 +55,8 @@ int		ft_error(int err, ...)
 	ft_dprintf(fd, "|{yel}   Line{eoc}     : %-35d|\n", va_arg(ap, int));
 	ft_dprintf(fd, "===================================================\n");
 	ft_dprintf(fd, "{red} erreur(s) :{eoc}\n%5c{bol}", 0);
-	ft_vdprintf(fd, g_error[err], ap);
+	if (err >= 0)
+		ft_vdprintf(fd, g_error[err], ap);
 	ft_dprintf(fd, "{eoc}\n\n");
 	va_end(ap);
 	return (1);
