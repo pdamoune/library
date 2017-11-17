@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:42:56 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/11/14 10:26:28 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/11/17 16:19:22 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@
 # include <limits.h>
 # include <fcntl.h>
 # include <error.h>
-
-# define INFO			__FILE__, __FUNCTION__, __LINE__
-# define ERR(n, ...)	ft_error(n, INFO, ##__VA_ARGS__)
 
 # define MSG			"%@{BLU}{bol}%s, %s, %4d{EOC} - |{red}"
 # define DG(f, ...)		ft_printf(MSG f "{eoc}|\n", 2, INFO, ##__VA_ARGS__)

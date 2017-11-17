@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/19 18:40:48 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/11/14 13:43:02 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/11/17 12:00:17 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <string.h>
 # include <stdarg.h>
 # include <stdlib.h>
+
+# define INFO			__FILE__, __FUNCTION__, __LINE__
+# define ERR(n, ...)	ft_error(n, INFO, ##__VA_ARGS__)
 
 # define MSG_ERROR		-1
 
@@ -42,6 +45,7 @@
 # define E_MLX_INIT		16
 # define E_MLX_WIN		17
 # define E_MLX_IMG		18
+# define E_MLX_PXL		19
 
 int		ft_error(int err, ...);
 

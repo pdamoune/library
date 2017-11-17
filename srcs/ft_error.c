@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/19 18:39:22 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/11/14 13:43:10 by pdamoune         ###   ########.fr       */
+/*   Updated: 2017/11/17 11:59:08 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ char	*g_error[] =
 	"Mlx error: mlx = %p",
 	"Mlx error: win = %p",
 	"Mlx error: img = %p",
+	"Mlx error: pixel_put = NULL",
 };
 
 int		ft_error(int err, ...)
