@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/17 15:23:08 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/10/30 17:18:13 by pdamoune         ###   ########.fr       */
+/*   Updated: 2018/03/08 17:07:49 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 int			ft_vdprintf(int fd, const char *format, va_list ap)
 {
-	FD = fd;
 	va_copy(AP, ap);
+	prf_bzero(&ARG, sizeof(t_arg));
+	prf_bzero(&FORM, sizeof(t_form));
+	FD = fd;
 	return (do_printf(format));
 }
 

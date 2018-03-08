@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 16:19:21 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/10/30 17:18:14 by pdamoune         ###   ########.fr       */
+/*   Updated: 2018/03/08 17:08:10 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ int		prf_fill_buffer(const char *format)
 
 int		do_printf(const char *format)
 {
-	prf_bzero(&ARG, sizeof(t_arg));
-	prf_bzero(&FORM, sizeof(t_form));
 	if (!prf_fill_buffer(format))
 		return (write(FD, BUFFER, J) ? RET + J : RET + J);
 	while (prf_parsing(format) > 0)

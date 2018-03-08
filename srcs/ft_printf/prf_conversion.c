@@ -6,7 +6,7 @@
 /*   By: pdamoune <pdamoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/17 19:38:51 by pdamoune          #+#    #+#             */
-/*   Updated: 2017/08/15 17:43:40 by pdamoune         ###   ########.fr       */
+/*   Updated: 2018/03/08 17:08:48 by pdamoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ t_conv		g_conv[] =
 	{'U', &prf_type_u},
 	{'x', &prf_type_x},
 	{'X', &prf_type_x},
-	{'@', 0},
 	{0, &prf_type_c}
 };
 
@@ -50,9 +49,6 @@ void	prf_conversion(void)
 		!prf_type_uc() ? RET = -1 : 0;
 	else if (TYPE == 'S' || (TYPE == 's' && MOD & MOD_L))
 		!prf_type_us() ? RET = -1 : 0;
-	else if (TYPE == '@')
-		(g_form.fd = va_arg(AP, int)) == -1 ?
-		(RET = -1) : 0;
 	else
 		(g_conv[i].fonction)();
 }
